@@ -6,14 +6,14 @@ My name is *Norcius Noel* and I am a returning student from **DWA-E15**. I was q
 
 Last year Angular with Larry Bouteliere and I am looking to broaden my knowledge with a different Javascript framework.
 So far I have taken:
-	* CSCI E-31	1
-	* DGMD S-23	2
-	* DGMD E-27	3
-	* DGMD E-20 4
-	* DGMD E-25	5
-	* CSCI E-3	6
-	* CSCI E-60	7
-	* CSCI E-15 8
+	- CSCI E-31	
+	- DGMD S-23	
+	- DGMD E-27	
+	- DGMD E-20 
+	- DGMD E-25	
+	- CSCI E-3	
+	- CSCI E-60	
+	- CSCI E-15 
 
 My Github username is `<nnoel2626>` and my email address is `<nnoel@fas.harvard.edu.>`
 
