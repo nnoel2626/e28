@@ -19,7 +19,7 @@ So far I have taken:
 
 ---
 
-__My three favorite books :)__
+__My three favorite books__ :)
 
 ~~~
 The Old Man and the Sea: is a short novel written by Ernest Hemingway.
