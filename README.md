@@ -1,13 +1,11 @@
 # dgmd-e28
----
-### Course for DGMD E28
-<https://hesweb.dev/e28>
+
+### Course Website for DGMD E28 is <https://hesweb.dev/e28>
 
 My name is *Norcius Noel* and I am a returning student from **DWA-E15**. I was quite pleased with the way you structured and organized your course the last time then I decided to take ["Vue.js"](https://vuejs.org) with you.
 
 Last year Angular with Larry Bouteliere and I am looking to broaden my knowledge with a different Javascript framework.
-So far I have taken:
-
+So far I have taken the following classes:
 * CSCI E-31	
 * DGMD S-23	
 * DGMD E-27	
@@ -19,8 +17,7 @@ So far I have taken:
 
 ---
 
-__My three favorite books__ :)
-
+__My three favorite books :)__
 ~~~
 The Old Man and the Sea: is a short novel written by Ernest Hemingway.
 The Kalevala: Finnish oral folklore and mythology.
