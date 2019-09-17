@@ -4,7 +4,7 @@
 
 My name is *Norcius Noel* and I am a returning student from **DWA-E15**. I was quite pleased with the way you structured and organized your course the last time so I decided to enroll this ["Vue.js"](https://vuejs.org) class.
 
-Last semester I took CSCI E-31 (Web App Development/Node.JS) with Larry Bouthillier and now I am looking forward to broaden my knowledge with a different Javascript framework.
+Last semester I took CSCI E-31 (Web App Development/Node.JS) with Larry Bouthillier and now I am looking forward broadening my knowledge with a different Javascript framework.
 
 **So far I have taken the following classes:**
 

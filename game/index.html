@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Game Application</title>
+    <script src='js/wordGuess.js' defer></script>
+</head>
+
+<body>
+    <div>
+        <h1>Mystery Word</h1>
+        <hr>
+        <h3>
+            Guess the word by filling out the missing letters
+        </h3>
+
+
+    </div>
+
+    <div>
+        <h5>Enter the missing letters and press enter button:</h5>
+        Guesses Remaining:
+        <span id="guesses">10</span>
+    </div>
+
+    <div>
+        Mystery Word will displayed Here:
+        <span id="random-word">""</span>
+    </div>
+    <div>
+        Guessed Word:
+        <span id="current-letter">""</span>
+    </div>
+
+
+    <label for="">Guess one letter at a time </label>
+    <input id="guessed-letter" type="text" onfocus="this.value=''" value="" placeholder="Enter letter">
+    <input type="submit" id="submit">
+
+    <input type="button" value="Clear">
+    </div>
+
+    </div>
+
+</body>
+
+</html>
