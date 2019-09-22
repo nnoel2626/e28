@@ -12,46 +12,43 @@
 </head>
 
 <body>
+    <div class="container">
+        <h1> Mystery Word Game</h1>
+        <div id="startButton" style="display: block">
+            <p>Press the start button to get started!</p>
+            <button class="startBtn" onclick="start()">Start</button>
+        </div>
 
-    <body>
-        <div class="container">
-            <h1> Mystery Word Game</h1>
-            <div id="startButton" style="display: block">
-                <p>Press the start button to get started!</p>
-                <button class="startBtn" onclick="start()">Start</button>
+        <!-- When press the start button then this will -->
+        <div id="mainGame" style="display: none">
+            <h4>Wins</h4>
+            <div id="totalWins"></div>
+            <h4>Current Word</h4>
+            <div id="currentWord"></div>
+
+            <h4>Letters Guessed</h4>
+            <div id="guessedLetters"></div>
+            <h4>Guesses Remaining</h4>
+            <div id="remainingGuesses"></div>
+        </div>
+
+        <!-- Display loosing message to player -->
+        <div id="youLose" style="display: none">
+            <h1>You Lose</h1>
+            <div>
+                <button class="restartBtn" onclick=" start()">Play again?</button>
+            </div>
+            <p id="correctWordWas"></p>
+        </div>
+
+        <!-- Display wining message to player -->
+        <div id="youWin" style="display: none">
+            <h2>You Win</h2>
+            <div>
+                <button class="restartBtn" onclick="start()">Play again?</button>
             </div>
 
-            <!-- When press the start button then this will -->
-            <div id="mainGame" style="display: none">
-                <h4>Wins</h4>
-                <div id="totalWins"></div>
-                <h4>Current Word</h4>
-                <div id="currentWord"></div>
-
-                <h4>Letters Guessed</h4>
-                <div id="guessedLetters"></div>
-                <h4>Guesses Remaining</h4>
-                <div id="remainingGuesses"></div>
-            </div>
-
-            <!-- Display loosing message to player -->
-            <div id="youLose" style="display: none">
-                <h1>You Lose</h1>
-                <div>
-                    <button class="restartBtn" onclick=" start()">Play again?</button>
-                </div>
-                <p id="correctWordWas"></p>
-            </div>
-
-            <!-- Display wining message to player -->
-            <div id="youWin" style="display: none">
-                <h2>You Win</h2>
-                <div>
-                    <button class="restartBtn" onclick="start()">Play again?</button>
-                </div>
-
-            </div>
-
-    </body>
+        </div>
+</body>
 
 </html>
