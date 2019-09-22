@@ -43,7 +43,6 @@
  }
 
 
-
  function updateDisplay() {
      document.getElementById("totalWins").innerText = wins
      document.getElementById("currentWord").innerText = wordGuess.join("")
@@ -52,12 +51,10 @@
  }
 
 
-
  // Check in keypressed is between A-Z or a-z
  function isAlpha(ch) {
      return /^[A-Z]$/i.test(ch);
  }
-
 
 
  // Once the HTML document has been completely loaded, Listen for keyboard Events
