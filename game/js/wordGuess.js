@@ -90,7 +90,6 @@
 
 
          if (!foundLetter) {
-             //  incorrectSound.play()
              // Check if inccorrect guess is already on the list
              if (!guessedLetters.includes(letter)) {
                  // Add incorrect letter to guessed letter list
