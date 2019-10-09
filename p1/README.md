@@ -2,7 +2,7 @@
 
 # Project 1
 + By: *Norcius Noel*
-+ Production URL: <http://p1.xyz>
++ Production URL: <http://p1.nnoel.xyz>
 
 ## Outside resources
 *your list of outside resources go here*
