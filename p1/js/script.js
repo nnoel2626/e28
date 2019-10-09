@@ -1,111 +1,108 @@
 let app = new Vue({
     el: '#app',
     data: {
-        'isHidden': true,
-        'playerName': null,
-        'guess': null,
-        'guesses': [],
-        'results': null,
-        'settings': {
-            'max': 200,
-            'type': 'numeric',
-            'guessLimit': 15
-        },
-        wordList: [{
-                id: 0,
-                text: 'Vegetables'
-            },
-            {
-                id: 1,
-                text: 'Cheese'
-            },
-            {
-                id: 2,
-                text: 'Whatever'
-            }
+
+        gameMode: 'start',
+        show: true,
+        message: 'welcome to the Game',
+        playerName: '',
+
+
+        maxGuess: 10,
+        numGuess: null,
+        winCount: 0,
+
+        mysteryWord: "",
+        wordDisplayLetters: [],
+        usedLetters: [],
+        wordLetters: [],
+
+        wordsArray: ['rabbit', 'allows', 'snail', 'airport',
+            'carrots', 'duplex', 'cigars', 'river', 'airbus'
         ],
 
-        'answer': 55,
-        'guessesDetailed': [{
-                guess: 15,
-                result: 'low'
-            },
-            {
-                guess: 60,
-                result: 'high'
-            },
-            {
-                guess: 50,
-                result: 'low'
-            }
-        ]
+        possibleLetters: ["A", "B", "C", "D", "E", "F", "G", "H", "I",
+            "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S",
+            "T", "U", "V", "W", "X", "Y", "Z"
+        ],
 
+        feedback: false,
+        correct: false,
+        // initialized: false,
+    },
+    computed: {
+        displayWord: function () {
+            // split the mystery word as array of letter
+            let wordAsArray = this.mysteryWord.split('');
+            //Loop through the word and add dashes
+            for (let i = 0; i < wordAsArray.length; i += 1 / 3) {
+                wordAsArray[i] = " _ ";
+            }
+            //return an array of dashes
+            return wordAsArray.join('');
+        }
     },
 
     methods: {
-        greet: function (event) {
-            // `this` inside methods points to the Vue instance
-            alert('Welcome ' + this.playerName + '!')
-            // `event` is the native DOM event
-            if (event) {
-                alert(event.target.tagName)
-            }
+
+        setUpGame: function () {
+            this.gameMode = 'play';
+            this.numGuess = this.maxGuess
+            this.mysteryWord = this.wordsArray[Math.floor(Math.random() * this.wordsArray.length)].toUpperCase()
+            this.wordLetters = this.mysteryWord.split('')
+            this.wordDisplayLetters = Array(this.mysteryWord.length)
+            this.usedLetters = []
+            this.feedback = false;
+            this.correct = false;
+            this.show = true;
         },
-        methods: {
-            submitGuess: function () {
-                this.guesses.push(this.guess);
+
+        guessLetter(letter) {
+            var foundLetter = false;
+            if (this.usedLetters.includes(letter)) {
+                return
+            }
+            this.usedLetters.push(letter);
+
+            for (let i = 0; i < this.wordDisplayLetters.length; i++) {
+                if (letter === this.wordLetters[i]) {
+                    foundLetter = true;
+                    this.wordDisplayLetters.splice(i, 1, letter);
+                }
+                if (this.wordDisplayLetters.join('') == this.wordLetters.join('')) {
+                    this.feedback = true;
+                    this.winCount++;
+                    this.correct = true;
+                    this.show = false;
+                }
+            }
+            if (!foundLetter) {
+                this.numGuess--;
+                if (this.numGuess == 0) {
+                    //Display word and display losing message
+                    this.wordDisplayLetters.join('') == !this.wordLetters.join('')
+                    this.feedback = true;
+                    this.show = false;
+                }
             }
 
+        },
+
+        getStrikethroughClass(letter) {
+            if (this.usedLetters.includes(letter)) {
+                return 'diagonal-strike'
+            }
+            return null
+        },
+
+        initialize() {
+            // this.initialized = true;
+            window.location.reload()
+            this.winCount = 0;
+            setUpGame();
+            //this.wordLetters = this.mysteryWord.split('')
+            //this.wordDisplayLetters = Array(this.word.length)
+            //this.usedLetters = []
         }
     }
-
-
-
-});
-
-
-
-
-
-
-
-
-
-
-
-//  const app = new Vue({
-//      el: '#app',
-//      data() {
-//          return {
-//              name: 'Luna the Destroyer of Dogs',
-//              cats: [{
-//                      name: 'Simba',
-//                      age: 11
-//                  },
-//                  {
-//                      name: 'Robin',
-//                      age: 5
-//                  }, {
-//                      name: 'Luna',
-//                      age: 9
-//                  },
-//                  {
-//                      name: 'Cracker',
-//                      age: 6
-//                  },
-//                  {
-//                      name: 'Pig',
-//                      age: 3
-//                  }
-//              ]
-//          }
-//      },
-//      computed: {
-//          oldcats() {
-//              return this.cats.filter(c => {
-//                  return c.age > 10;
-//              });
-//          }
-//      }
-
-//  });
+})

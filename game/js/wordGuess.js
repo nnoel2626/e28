@@ -4,32 +4,31 @@
  ]
 
  //Global variables//
- const maxGuess = 10
- var guessedLetters = []
- var wordGuess = []
- var word
- var numGuess
- var wins = 0
+ const maxGuess = 10;
+ var guessedLetters = [];
+ var wordGuess = [];
+ var word;
+ var numGuess;
+ var wins = 0;
 
 
  function start() {
-     numGuess = maxGuess
-
+     numGuess = maxGuess;
      // Get a new word
-     word = wordsArray[Math.floor(Math.random() * wordsArray.length)].toUpperCase()
-     console.log(word)
-
+     word = wordsArray[Math.floor(Math.random() * wordsArray.length)].toUpperCase();
+     console.log(word);
      // Reset word arrays
-     guessedLetters = []
-     wordGuess = []
+     wordGuess = [];
+     guessedLetters = [];
+
 
      // Reset the guessed word
      for (var i = 0, j = word.length; i < j; i++) {
          // Put a space instead of an underscore between multi word "words"
          if (word[i] === " ") {
-             wordGuess.push(" ")
+             wordGuess.push(" ");
          } else {
-             wordGuess.push("_")
+             wordGuess.push("_");
          }
      }
      //Display or hide different Div's on the page
@@ -44,10 +43,10 @@
 
 
  function updateDisplay() {
-     document.getElementById("totalWins").innerText = wins
-     document.getElementById("currentWord").innerText = wordGuess.join("")
-     document.getElementById("remainingGuesses").innerText = numGuess
-     document.getElementById("guessedLetters").innerText = guessedLetters.join(" ")
+     document.getElementById("totalWins").innerText = wins;
+     document.getElementById("currentWord").innerText = wordGuess.join("");
+     document.getElementById("remainingGuesses").innerText = numGuess;
+     document.getElementById("guessedLetters").innerText = guessedLetters.join(" ");
  }
 
 

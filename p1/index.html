@@ -4,133 +4,57 @@
     <title>Game Application</title>
     <meta charset='utf-8'>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <link rel="stylesheet" href="css/p1.css">
     <script src="js/script.js" defer></script>
 </head>
 
 <body>
+    <div class="container">
+        <div id='app' v-cloak>
+            <h1> Mystery Word Game</h1>
 
+            <div v-if='gameMode == "start"' id='landingDiv'>
+                <p>Enter your Name and Press the start button to get started!</p>
+                <!-- <p v-else> Enter your Name and Press the start button to get started!</p> -->
+                <label> What is your Name </label>
+                <input id='input' type='test' v-model.lazy.trim='playerName' @keyup.enter='setUpGame'>
+                <button id='startBtn' class="Btn btn-lg btn-primary" v-on:click='setUpGame'>Start</button>
+            </div>
 
-    <div id='app' v-cloak>
-        <h1> Mystery Word Game</h1>
-        <div id="startButton">
-            <p>Press the start button to get started!</p>
-            <label> What is your Name<input type='test' value='heads' v-model='playerName'></label>
-            <!-- <button class="startBtn" v-on:click="isHidden = !isHidden">Start</button> -->
-            <button class="startBtn" v-on:click='greet'>Start</button>
+            <div v-if='gameMode == "play"' id="content">
+                <!-- <div v-else-if='gameMode == "play"' class="content"></div> -->
+                <p v-if=' playerName'> Welcome to the game {{ playerName }} !</p>
+
+                <h4> Mystery Word</h4>
+                <p class="currentWord"> {{ displayWord }}</p>
+
+                <h4>Wins</h4>
+                <p class="wincount">{{ winCount }}</p>
+
+                <h4>Letters Guessed</h4>
+                <p class=" letter" v-for="letter in wordDisplayLetters">{{letter}}</p>
+
+                <h4>Guesses Remaining</h4>
+                <p class="guessesCount">{{ numGuess }}</p>
+
+                <p v-show="show" @click='guessLetter(letter)' class="possibleLetter"
+                    :class="getStrikethroughClass(letter)" v-for="letter in possibleLetters">
+                    {{letter}}
+                </p>
+            </div>
+
+            <div v-if='feedback' class='feedback' :class="{ pass : correct, fail: !correct }">
+                <div v-if='correct'>You won! Nice work. <button @click='setUpGame()'> Play again</button>
+                    Or restart the game<button @click='initialize()'> Re-start</button></div>
+                <div v-else>You lost. Please try again. <button @click='setUpGame()'> Play
+                        again</button> Or restart the game<button @click='initialize()'> Re-start</button>
+                </div>
+            </div>
 
         </div>
-
-
-        <!-- <div class="list" v-for="drinks in rom">
-            <button v-on:click="visible = !visible">{{ drinks.brand }}</button>
-
-            <div class="hidden" v-show="!visible">
-                <p> {{ drinks.comment }} </p>
-            </div> -->
-
-        <!-- <div id="app">
-            <button v-on:click="isHidden = true">Hide the text below</button>
-            <button v-on:click="isHidden = !isHidden">Toggle hide and show</button>
-
-            <h1 v-if="!isHidden">Hide me on click event!</h1>
-        </div> -->
-
-        <!-- landing page -->
-
-        <div class="hidden" v-show='!isHidden'>
-            <label> What is your Name<input type='test' value='heads' v-model='playerName'></label>
-            <p v-if='playerName'>Player:{{ playerName }}</p>
-            <p v-else> Enter your Name and Press the start button to get started!</p>
-        </div>
-
-
     </div>
+
 
 </body>
 
 </html>
-
-
-
-<!-- <div v-show='playerName'>
-     <label> What's your guess?<input type='test' v-model='guess' v-on:keyup.enter='submitGuess'></label>
-     <button class="startBtn" v-on:click='submitGuess'>Guess</button>
-     <ul>
-         <li v-for='thisGuess in guesses'>{{ this.Guess }}</li>
-     </ul>
- </div>
- <ul>
-     <li v-for='(setting, property) in settings'>{{ property }}:{{ setting }}</li>
- </ul>
-
- <ul>
-     <li v-for='thisGuess in guessesDetails'>{{ thisGuess.guess }} was too{{ thisGuess.result }} </li>
- </ul>
-
- </div> -->
-
-<!-- When press the start button then this will -->
-<!-- <div id="mainGame" style="display: none"> -->
-<!-- <h4>Wins</h4>
-                    <div id="totalWins"></div>
-                    <h4>Current Word</h4>
-                    <div id="currentWord"></div>
-
-                    <h4>Letters Guessed</h4>
-                    <div id="guessedLetters"></div>
-                    <h4>Guesses Remaining</h4>
-                    <div id="remainingGuesses"></div>
-                </div> -->
-
-<!-- Display wining message to player -->
-<!-- <div id="youWin" style="display: none" v-if='winner'>
-                    <h2>You Win</h2>
-                    <div>
-                        <button class="restartBtn" onclick="start()">Play again?</button>
-                    </div>
-
-                </div> -->
-
-
-<!-- Display loosing message to player -->
-
-<!-- <div id="youLose" style="display: none" v-else>
-                    <h1>You Lose</h1>
-                    <div>
-                        <button class="restartBtn" onclick=" start()">Play again?</button>
-                    </div>
-                    <p id="correctWordWas"></p>
-                </div>
- -->
-
-<!-- <div id="app">
-    <input type="text" v-model="name">
-    <ul>
-        <li v-for="cat in oldcats">{{cat.name}}</li>
-    </ul>
-</div>
-
-<script src="https://unpkg.com/vue"></script>
-
-<script>
-   
-</script> -->
-
-<!-- <div>
-            <label><input type='test' value='heads' v-model='choice'> heads</label>
-            <label><input type='radio' value='tails' v-model='choice'> tails</label>
-        </div>  -->
-
-<!-- <button id='guessedword' v-on:click='flip'></button>
-
-  <div v-if='flipped'>
-      The coin landed on <strong>{{ coin }}</strong>
-      <div id='winMessage' v-if='winner'>You won! :-)</div>
-      <div id='loseMessage' v-else>You lost :-(</div>
-  </div> -->
-
-<!-- landing page -->
-<!-- <div id="startButton" style="display: block">
-                    <p>Press the start button to get started!</p>
-                    <button class="startBtn" onclick="start()">Start</button>
-                </div> -->
