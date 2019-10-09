@@ -96,13 +96,8 @@ let app = new Vue({
         },
 
         initialize() {
-            // this.initialized = true;
-            window.location.reload()
-            this.winCount = 0;
-            setUpGame();
-            //this.wordLetters = this.mysteryWord.split('')
-            //this.wordDisplayLetters = Array(this.word.length)
-            //this.usedLetters = []
+            window.location.reload();
+
         }
     }
 })
