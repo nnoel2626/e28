@@ -15,10 +15,9 @@
 
             <div v-if='gameMode == "start"' id='landingDiv'>
                 <p>Enter your Name and Press the start button to get started!</p>
-                <!-- <p v-else> Enter your Name and Press the start button to get started!</p> -->
                 <label> What is your Name </label>
                 <input id='input' type='test' v-model.lazy.trim='playerName' @keyup.enter='setUpGame'>
-                <button id='startBtn' class="Btn btn-lg btn-primary" v-on:click='setUpGame'>Start</button>
+                <button id='startBtn' class="startBtn btn-lg btn-primary" v-on:click='setUpGame'>Start</button>
             </div>
 
             <div v-if='gameMode == "play"' id="content">
@@ -42,11 +41,11 @@
                 </p>
             </div>
 
-            <div v-if='feedback' class='feedback' :class="{ pass : correct, fail: !correct }">
-                <div v-if='correct'>You won! Nice work. <button @click='setUpGame()'> Play again</button>
-                    Or restart the game<button @click='initialize()'> Re-start</button></div>
+            <div v-if='feedback' class='feedback' v-bind:class="{ pass : correct, fail: !correct }">
+                <div v-if='correct'>You won! Nice work. <button @click='setUpGame()'> Play again</button><br>
+                    Or restart game <button @click='initialize()'> Re-start</button></div>
                 <div v-else>You lost. Please try again. <button @click='setUpGame()'> Play
-                        again</button> Or restart the game<button @click='initialize()'> Re-start</button>
+                        again</button><br> Or restart game <button @click='initialize()'> Re-start</button>
                 </div>
             </div>
 
