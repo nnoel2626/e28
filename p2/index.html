@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <title>Game Application</title>
+    <meta charset='utf-8'>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <link rel="stylesheet" href="css/p2.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <script type='text/x-template' id='round-detail'>
+        <div v-bind:class="{ winner : winner == 'Player'}">
+            <ul>
+                <li>Round #: {{ number }}</li>
+                <li>Winner: {{ winner }}</li>
+                <li><slot name='choice'></slot></li>
+                <li><slot name='coin'></slot></li>
+            </ul>
+            <button @click='$emit("delete-round", number)'>Delete round</button>
+        </div>
+    </script>
+
+
+
+    <div class="container">
+        <div id='app' v-cloak>
+            <h1> Mystery Word Game</h1>
+
+            <div v-if='gameMode == "start"' id='landingDiv'>
+                <p>Enter your Name and Press the start button to get started!</p>
+                <label> What is your Name </label>
+                <input id='input' type='test' v-model.lazy.trim='playerName' @keyup.enter='setUpGame'>
+                <button id='startBtn' class="startBtn btn-lg btn-primary" v-on:click='setUpGame'>Start</button>
+            </div>
+
+            <div v-if='gameMode == "play"' id="content">
+                <p v-if=' playerName'> Welcome to the game {{ playerName }} !</p>
+
+                <h4> Mystery Word</h4>
+                <p class="currentWord"> {{ displayWord }}</p>
+
+                <h4>Wins</h4>
+                <p class="wincount">{{ winCount }}</p>
+
+                <h4>Letters Guessed</h4>
+                <p class=" letter" v-for="letter in wordDisplayLetters">{{letter}}</p>
+
+                <h4>Guesses Remaining</h4>
+                <p class="guessesCount">{{ numGuess }}</p>
+
+                <p v-show="show" @click='guessLetter(letter)' class="possibleLetter"
+                    :class="getStrikethroughClass(letter)" v-for="letter in possibleLetters">
+                    {{letter}}
+                </p>
+            </div>
+
+            <div v-if='feedback' class='feedback' v-bind:class="{ pass : correct, fail: !correct }">
+                <div v-if='correct'>You won! Nice work. <button @click='setUpGame()'> Play again</button><br>
+                    Or restart game <button @click='initialize()'> Re-start</button></div>
+                <div v-else>You lost. Please try again. <button @click='setUpGame()'> Play
+                        again</button><br> Or restart game <button @click='initialize()'> Re-start</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
