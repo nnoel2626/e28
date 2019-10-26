@@ -1,20 +1,5 @@
-Vue.component('round-detail', {
-    data: function () {
-        return {
+Vue.component('round-details', {
 
-        }
-    },
-    props: {
-        'number': {
-            type: Number,
-            default: 0
-        },
-        'winner': {
-            type: String,
-            default: ''
-        }
-    },
-    template: '#round-detail',
 });
 
 // root Vue instance
@@ -48,6 +33,7 @@ let app = new Vue({
         },
         deleteRound: function (roundNumber) {
             console.log('Invoked deleteRound from root Vue instance');
+
             function isMatchingRound(round) {
                 return round.number != this;
             }

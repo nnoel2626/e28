@@ -5,10 +5,15 @@ Vue.component('round-detail', {
         }
     },
     props: {
-        'number': {
+        'win': {
             type: Number,
-            default: 0
+            default: 00
         },
+        'lost': {
+            type: Number,
+            default: 00
+        },
+
         'winner': {
             type: String,
             default: ''
@@ -18,20 +23,22 @@ Vue.component('round-detail', {
 });
 
 
-
+// root Vue instance
 let app = new Vue({
     el: '#app',
     data: {
 
         gameMode: 'start',
-        show: true,
+        feedback: false,
+        correct: false,
+
         message: 'welcome to the Game',
         playerName: '',
-
 
         maxGuess: 10,
         numGuess: null,
         winCount: 0,
+        lostCount: 0,
 
         mysteryWord: "",
         wordDisplayLetters: [],
@@ -46,11 +53,8 @@ let app = new Vue({
             "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S",
             "T", "U", "V", "W", "X", "Y", "Z"
         ],
-
-        feedback: false,
-        correct: false,
-        // initialized: false,
     },
+
     computed: {
         displayWord: function () {
             // split the mystery word as array of letter
@@ -63,6 +67,7 @@ let app = new Vue({
             return wordAsArray.join('');
         }
     },
+
 
     methods: {
 
@@ -79,7 +84,9 @@ let app = new Vue({
         },
 
         guessLetter(letter) {
+
             var foundLetter = false;
+
             if (this.usedLetters.includes(letter)) {
                 return
             }
@@ -91,20 +98,28 @@ let app = new Vue({
                     this.wordDisplayLetters.splice(i, 1, letter);
                 }
                 if (this.wordDisplayLetters.join('') == this.wordLetters.join('')) {
-                    this.feedback = true;
                     this.winCount++;
+                    this.gameMode = 'result';
+                    this.feedback = true;
                     this.correct = true;
                     this.show = false;
                 }
+
+
             }
             if (!foundLetter) {
                 this.numGuess--;
                 if (this.numGuess == 0) {
                     //Display word and display losing message
                     this.wordDisplayLetters.join('') == !this.wordLetters.join('')
+                    //this.winCount++;
+                    this.gameMode = 'result';
                     this.feedback = true;
-                    this.show = false;
+                    this.lostCount++;
+
                 }
+
+
             }
 
         },
