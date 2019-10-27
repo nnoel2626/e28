@@ -3,23 +3,12 @@
 <head>
     <title>Game Application</title>
     <meta charset='utf-8'>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
-    <link rel="stylesheet" href="css/p2.css">
+    <link rel="stylesheet" href="p2.css">
     <script src="js/script.js" defer></script>
 </head>
 
 <body>
-
-    <script type='text/x-template' id='round-detail'>
-        <div v-bind:class="{ winner : winner == 'Player'}">
-            <ul>
-                <li>Your score,  {{ winner }}</li>
-                <li>WinCount : {{ win }}</li>
-                <li>LostCount : {{ lost }}</li>             
-            </ul>
-            
-    </script>
-
+  
     <div id='app' v-cloak class="container">
         <h1> Mystery Word Game</h1>
 
