@@ -1,0 +1,145 @@
+body {
+    background-image: grey;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    /* color: white; */
+    display: flex;
+}
+
+.container {
+    margin: auto;
+    text-align: center;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+btnstart {
+    display: block;
+    margin-top: 20px;
+    margin-left: 200px;
+    width: 850px;
+    height: 300px;
+}
+
+
+
+.currentWord {
+    display: inline-block;
+    /* border-bottom: 1px solid; */
+    margin: 0px 3px 0px 3px;
+    font-size: 24px;
+    min-width: 20px;
+    vertical-align: bottom;
+
+}
+
+.letter {
+    display: inline-block;
+    border-bottom: 1px solid;
+    margin: 0px 3px 0px 3px;
+    font-size: 25px;
+    min-width: 20px;
+    vertical-align: bottom;
+}
+
+
+
+.possibleLetter {
+    display: inline-block;
+    margin: 0px 3px 0px 3px;
+    font-size: 25px;
+    min-width: 20px;
+    cursor: pointer;
+}
+
+.diagonal-strike {
+    background: linear-gradient(to left top, transparent 47.75%, currentColor 49.5%, currentColor 50.5%, transparent 52.25%);
+    color: dimgrey;
+}
+
+button {
+    margin-top: 20px;
+    padding: 5px;
+}
+
+.pass {
+    background-color: green;
+}
+
+.fail {
+    background-color: red;
+}
+
+.feedback {
+    display: inline-block;
+    padding: 5px;
+    margin: 10px 0;
+    color: white;
+    font-weight: bold;
+}
+
+.startBtn {
+    display: inline-block;
+    padding: 0.3em 1.2em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #FFFFFF;
+    background-color: #4eb5f1;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.startBtn:hover {
+    background-color: #4095c6;
+}
+
+@media all and (max-width:30em) {
+    .startBtn {
+        display: block;
+        margin: 0.2em auto;
+    }
+}
+
+.restartBtn {
+    display: inline-block;
+    padding: 0.3em 1.2em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #FFFFFF;
+    background-color: #29A829;
+    text-align: center;
+    transition: all 0.2s;
+
+    -webkit-animation: glowing 1500ms infinite;
+    -moz-animation: glowing 1500ms infinite;
+    -o-animation: glowing 1500ms infinite;
+    animation: glowing 1500ms infinite;
+}
+
+@-webkit-keyframes glowing {
+    0% {
+        background-color: #32CD32;
+        -webkit-box-shadow: 0 0 3px #32CD32;
+    }
+
+    50% {
+        background-color: #32CD32;
+        -webkit-box-shadow: 0 0 40px #32CD32;
+    }
+
+    100% {
+        background-color: #32CD32;
+        -webkit-box-shadow: 0 0 3px #32CD32;
+    }
+}
