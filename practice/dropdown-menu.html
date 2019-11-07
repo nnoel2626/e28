@@ -1,0 +1,177 @@
+<div class="container">
+    <div class="col-12 col-md-10 col-lg-12">
+        <div class="input-group my-3">
+            <input id="SearchProds" placeholder="Search" type="text" class="form-control" aria-label="Search Products"
+                v-model="searchTerm" />
+            <div class="input-group-append">
+
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Sort by
+                    <span class="caret"></span>
+                </button> 
+
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a href="#" class="dropdown-item d-flex justify-content-between" id="building"
+                        @click="$emit('requestKey', 'building')">
+                        Building
+                        <font-awesome-icon icon="check" v-if="myKey==='model'" />
+                    </a>
+                    <a href="#" class="dropdown-item d-flex justify-content-between" id="room"
+                        @click="$emit('requestKey', 'room')">
+                        Room
+                        <font-awesome-icon icon="check" v-if="myKey==='room'" />
+                    </a>
+                    <a class="dropdown-item d-flex justify-content-between" href="#" id="assigned_frequency"
+                        @click="$emit('requestKey', 'assigned_frequency')">
+                        frequency_band
+                        <font-awesome-icon icon="check" v-if="myKey==='assigned_frequency'" />
+                    </a>
+
+
+
+                    <div class="dropdown-divider" role="separator"></div>
+                    <a class="dropdown-item d-flex justify-content-between" href="#" id="asc"
+                        @click="$emit('requestDir', 'asc')">
+                        Asc
+                        <font-awesome-icon icon="check" v-if="myDir==='asc'" />
+                    </a>
+                    <a class="dropdown-item d-flex justify-content-between" href="#" id="desc"
+                        @click="$emit('requestDir', 'desc')">
+                        Desc
+                        <font-awesome-icon icon="check" v-if="myDir==='desc'" />
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div>
+    <div class="col-12 col-md-10 col-lg-12">
+        <b-input-group>
+            <b-input id="SearchProds" placeholder="Search" type="text" class="form-control" aria-label="Search Products"
+                v-model="searchTerm" />
+            <b-input-group-append>
+                <b-dropdown id="dropdown-1" text="Dropdown Button" class="m-md-2">
+                    <b-dropdown-item d-flex justify-content-between id="building"
+                        @click="$emit('requestKey', 'building')">
+                        Buildingn</b-dropdown-item>
+
+                    <b-dropdown-item d-flex justify-content-between id="room" @click="$emit('requestKey', 'room')"> Room
+                    </b-dropdown-item>
+
+                    <b-dropdown-item d-flex justify-content-between href="#" id="assigned_frequency"
+                        @click="$emit('requestKey', 'assigned_frequency')">assigned_frequency</b-dropdown-item>
+
+                    <b-dropdown-divider></b-dropdown-divider>
+
+                    <b-dropdown-item d-flex justify-content-between href="#" id="asc"
+                        @click="$emit('requestDir', 'asc')">
+                        Asc</b-dropdown-item>
+
+                    <b-dropdown-item d-flex justify-content-between href="#" id="desc"
+                        @click="$emit('requestDir', 'desc')">Desc</b-dropdown-item>
+                </b-dropdown>
+    </div>
+</div>
+
+
+
+
+<!-- <div class="col-12 col-md-10 col-lg-12">
+			<div class="input-group my-3">
+				<input
+					id="SearchProds"
+					placeholder="Search"
+					type="text"
+					class="form-control"
+					aria-label="Search Products"
+					v-model="searchTerm"
+				/>
+				<div class="input-group-append">
+					<button
+						type="button"
+						class="btn btn-primary dropdown-toggle"
+						data-toggle="dropdown"
+						aria-haspopup="true"
+						aria-expanded="false"
+					>
+						Sort by
+						<span class="caret"></span>
+					</button>
+
+					<div class="dropdown-menu dropdown-menu-right">
+						<a
+							href="#"
+							class="dropdown-item d-flex justify-content-between"
+							id="building"
+							@click="$emit('requestKey', 'building')"
+						>
+							Building
+							<font-awesome-icon icon="check" v-if="myKey==='model'" />
+						</a>
+
+						<a
+							href="#"
+							class="dropdown-item d-flex justify-content-between"
+							id="room"
+							@click="$emit('requestKey', 'room')"
+						>
+							Room
+							<font-awesome-icon icon="check" v-if="myKey==='room'" />
+						</a>
+
+						<a
+							class="dropdown-item d-flex justify-content-between"
+							href="#"
+							id="assigned_frequency"
+							@click="$emit('requestKey', 'assigned_frequency')"
+						>
+							frequency_band
+							<font-awesome-icon icon="check" v-if="myKey==='assigned_frequency'" />
+						</a>
+
+						<div class="dropdown-divider" role="separator"></div>
+
+						<a
+							class="dropdown-item d-flex justify-content-between"
+							href="#"
+							id="asc"
+							@click="$emit('requestDir', 'asc')"
+						>
+							Asc
+							<font-awesome-icon icon="check" v-if="myDir==='asc'" />
+						</a>
+
+						<a
+							class="dropdown-item d-flex justify-content-between"
+							href="#"
+							id="desc"
+							@click="$emit('requestDir', 'desc')"
+						>
+							Desc
+							<font-awesome-icon icon="check" v-if="myDir==='desc'" />
+						</a>
+					</div>
+				</div>
+			</div>
+		</div> -->
+<!-- </div> -->
+
+<!-- <b-button
+				btn
+				btn-primary
+				dropdown-toggle
+				data-toggle="dropdown"
+				aria-haspopup="true"
+				aria-expanded="false"
+			>
+				Sort by
+				<span class="caret"></span>
+			</b-button>-->
