@@ -16,19 +16,19 @@
 									class="form-control"
 									name="building"
 									id="building"
-									placeholder="building's Name"
+									placeholder="building's name"
 									v-model="formData.building"
 								/>
 							</div>
 						</div>
 						<div class="form-group form-row">
 							<label class="col-md-2 col-form-label text-md-right" for="room">Room</label>
-							<div class="col-md-10">
+							<div class="col-md-8">
 								<input
 									type="text"
 									class="form-control"
 									id="room"
-									placeholder="Room Name"
+									placeholder="room name"
 									v-model="formData.room"
 								/>
 							</div>
@@ -36,80 +36,106 @@
 
 						<div class="form-group form-row">
 							<label class="col-md-2 col-form-label text-md-right" for="make">Make</label>
-							<div class="col-md-4">
-								<input type="make" class="form-control" name="make" id="make" v-model="formData.make" />
+							<div class="col-md-8">
+								<input
+									type="make"
+									class="form-control"
+									name="make"
+									id="make"
+									placeholder="make"
+									v-model="formData.make"
+								/>
 							</div>
 						</div>
 						<div class="form-group form-row">
 							<label class="col-md-2 col-form-label text-md-right" for="model">Model</label>
-							<div class="col-md-4">
-								<input type="model" class="form-control" name="model" id="model" v-model="formData.model" />
+							<div class="col-md-8">
+								<input
+									type="model"
+									class="form-control"
+									name="model"
+									id="model"
+									placeholder=" model"
+									v-model="formData.model"
+								/>
 							</div>
 						</div>
 						<div class="form-group form-row">
 							<label class="col-md-2 col-form-label text-md-right" for="micType">Microphone type</label>
-							<div class="col-md-4">
+							<div class="col-md-8">
 								<input
 									type="mic_type"
 									class="form-control"
 									name="mic_type"
 									id="mic_type"
+									placeholder="microphone type"
 									v-model="formData.mic_type"
 								/>
 							</div>
 						</div>
 						<div class="form-group form-row">
 							<label class="col-md-2 col-form-label text-md-right" for="group">Group</label>
-							<div class="col-md-4">
-								<input type="group" class="form-control" name="group" id="group" v-model="formData.group" />
+							<div class="col-md-8">
+								<input
+									type="group"
+									class="form-control"
+									name="group"
+									id="group"
+									placeholder="group"
+									v-model="formData.group"
+								/>
 							</div>
 						</div>
 
 						<div class="form-group form-row">
 							<label class="col-md-2 col-form-label text-md-right" for="channel">Channel</label>
-							<div class="col-md-4">
+							<div class="col-md-8">
 								<input
 									type="channel"
 									class="form-control"
 									name="channel"
 									id="channel"
+									placeholder="channel"
 									v-model="formData.channel"
 								/>
 							</div>
 						</div>
 						<div class="form-group form-row">
 							<label class="col-md-2 col-form-label text-md-right" for="make">Serial Number</label>
-							<div class="col-md-4">
+							<div class="col-md-8">
 								<input
 									type="serial_number"
 									class="form-control"
 									name="serial_number"
 									id="serial_number"
+									placeholder="serial number"
 									v-model="formData.serial_number"
 								/>
 							</div>
 						</div>
 						<div class="form-group form-row">
 							<label class="col-md-2 col-form-label text-md-right" for="freq_band">Frequency Band</label>
-							<div class="col-md-4">
+							<div class="col-md-8">
 								<input
 									type="freq_band"
 									class="form-control"
 									name="freq_band"
 									id="freq_band"
+									placeholder="frequency band"
 									v-model="formData.freq_band"
 								/>
 							</div>
 						</div>
 						<div class="form-group form-row">
 							<label class="col-md-2 col-form-label text-md-right" for="freque_range">Frequency Range</label>
-							<div class="col-md-4">
+							<div class="col-md-8">
 								<input
 									type="freque_range"
 									class="form-control"
 									name="freque_range"
 									id="freque_range"
-									v-model="formData.freque_range"
+									placeholder="frequency range"
+									v-model="formData.freq_range"
 								/>
 							</div>
 						</div>
@@ -118,12 +144,13 @@
 								class="col-md-2 col-form-label text-md-right"
 								for="assigned_frequency"
 							>Assigned Frequency</label>
-							<div class="col-md-4">
+							<div class="col-md-8">
 								<input
 									type="assigned_frequency"
 									class="form-control"
 									name="assigned_frequency"
 									id="assigned_frequency"
+									placeholder="Assigned frequency"
 									v-model="formData.assigned_frequency"
 								/>
 							</div>
@@ -136,7 +163,7 @@
 									rows="4"
 									cols="50"
 									name="comments"
-									id="aptNotes"
+									id="comments"
 									placeholder="comments"
 									v-model="formData.comments"
 								></textarea>

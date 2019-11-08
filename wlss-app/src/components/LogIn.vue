@@ -6,18 +6,18 @@
 					<b-card class="p-3">
 						<h3 class="mb-4">Login</h3>
 						<b-form @submit="onSubmit" @reset="onReset" v-if="show">
-							<b-form-group id="exampleInputGroup1" label="Email address:" label-for="exampleInput1">
+							<b-form-group id="exampleInputGroup1" label="Email address:" label-for="email">
 								<b-form-input
-									id="exampleInput1"
+									id="email"
 									type="email"
 									v-model="form.email"
 									required
 									placeholder="Enter email"
 								></b-form-input>
 							</b-form-group>
-							<b-form-group id="exampleInputGroup2" label="Password:" label-for="exampleInput2">
+							<b-form-group id="password" label="Password:" label-for="password">
 								<b-form-input
-									id="exampleInput2"
+									id="password"
 									type="password"
 									v-model="form.password"
 									required
