@@ -20,14 +20,14 @@ import SearchProducts from "./SearchProducts";
 import ShowProduct from "./ShowProduct.vue";
 import { products } from "./../wirelessListArray.js";
 import _ from "lodash";
-// import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
 
 export default {
 	name: "ShowProducts",
 	components: {
 		ShowProduct,
 		SearchProducts
-		// FontAwesomeIcon
+		
 	},
 
 	data: function() {
@@ -36,7 +36,6 @@ export default {
 			filterKey: "building",
 			filterDir: "asc",
 			searchTerms: ""
-			// prodIndex: 0
 		};
 	},
 	computed: {

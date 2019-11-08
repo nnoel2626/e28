@@ -21,6 +21,8 @@ Your list of outside resources go here.
 
 + https://bootstrap-vue.js.org/docs/components/input-group/
 
++ https://www.storyblok.com/tp/how-to-auth0-vuejs-authentication
+
 
 ### Notes for instructor
 ```
