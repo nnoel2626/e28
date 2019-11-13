@@ -218,10 +218,27 @@ export default {
 </script>
 
 
-<style>
-.card-header {
-	cursor: pointer;
+<style scoped>
+.container {
+	display: flex;
+	align-items: space-between;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+div.row {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+
+div > h2 {
+	margin: 0 auto;
+	margin-top: 30px;
 }
 </style>
+
+
 	
 	

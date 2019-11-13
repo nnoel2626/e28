@@ -3,6 +3,7 @@
 + Production URL: http://wlss-app.nnoel.xyz
 
 ### Outline of features
+  * Router navigation guard
   * ShowProduct is a sub component of ShowProducts
   * Search products by Building locations
   * Sort Products by Ascending and descending order

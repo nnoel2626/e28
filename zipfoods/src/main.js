@@ -10,12 +10,36 @@ import CartPage from './components/pages/CartPage.vue';
 Vue.use(VueRouter);
 Vue.config.productionTip = false
 
-const routes = [
-  { path: '/', component: HomePage, name: 'home' },
-  { path: '/products', component: ProductsPage, name: 'products' },
-  { path: '/product/:id', component: ProductPage, name: 'product', props: true },
-  { path: '/categories', component: CategoriesPage, name: 'categories' },
-  { path: '/cart', component: CartPage, name: 'cart' }
+const routes = [{
+    path: '/',
+    component: HomePage,
+    name: 'home'
+  },
+  {
+    path: '/products',
+    component: ProductsPage,
+    name: 'products'
+  },
+  {
+    path: '/product/:id',
+    component: ProductPage,
+    name: 'product',
+    props: true
+  },
+  {
+    path: '/categories',
+    component: CategoriesPage,
+    name: 'categories'
+  },
+  {
+    path: '/cart',
+    component: CartPage,
+    name: 'cart'
+  },
+   {
+    path: '*',
+    redirect: '/'
+  }
 ]
 
 const router = new VueRouter({

@@ -15,8 +15,8 @@
 
 <script>
 
-import * as app from './../../app.js';
-
+//import * as app from './../../app.js';
+import { products } from './../../products.js';
 export default {
     name: 'CartPage',
     data: function() {

@@ -1,16 +1,16 @@
 <template>
 	<div class="container">
-		<h2>List of Wireless Microphones</h2>
-
-		<search-products
-			@searchRecords="searchProducts"
-			:myKey="filterKey"
-			:myDir="filterDir"
-			@requestKey="changeKey"
-			@requestDir="changeDir"
-		/>
-		<br />
-
+		<h2>List of Wireless Microphones by Building Location</h2>
+		<div class="mainContent">
+			<search-products
+				@searchRecords="searchProducts"
+				:myKey="filterKey"
+				:myDir="filterDir"
+				@requestKey="changeKey"
+				@requestDir="changeDir"
+			/>
+			<br />
+		</div>
 		<show-product v-for="product in filteredProds" :key="product.id" :product="product"></show-product>
 	</div>
 </template>
@@ -21,13 +21,11 @@ import ShowProduct from "./ShowProduct.vue";
 import { products } from "./../wirelessListArray.js";
 import _ from "lodash";
 
-
 export default {
 	name: "ShowProducts",
 	components: {
 		ShowProduct,
 		SearchProducts
-		
 	},
 
 	data: function() {
@@ -77,12 +75,30 @@ export default {
 
 
 <style scoped>
+/* div#app-container {
+	position: fixed;
+	top: 96px;
+	left: 0;
+	bottom: 96px;
+	width: 100%;
+	padding: 2rem;
+	background-color: #1d2733;
+	overflow: auto;
+} */
 .container {
 	display: flex;
 	align-items: space-between;
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
+
+.mainContent {
+	height: 60px;
+	width: 100%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
 div.row {
 	display: flex;
 	justify-content: center;

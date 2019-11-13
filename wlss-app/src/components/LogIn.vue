@@ -5,6 +5,7 @@
 				<b-col cols="5">
 					<b-card class="p-3">
 						<h3 class="mb-4">Login</h3>
+						<a href="#" v-b-modal.modal1>Register</a>
 						<b-form @submit="onSubmit" @reset="onReset" v-if="show">
 							<b-form-group id="exampleInputGroup1" label="Email address:" label-for="email">
 								<b-form-input
@@ -21,10 +22,9 @@
 									type="password"
 									v-model="form.password"
 									required
-									placeholder="Enter name"
+									placeholder="Enter password"
 								></b-form-input>
 							</b-form-group>
-
 							<b-form-group id="exampleGroup4">
 								<b-form-checkbox-group v-model="form.checked" id="exampleChecks">
 									<b-form-checkbox value="remember">Remember me</b-form-checkbox>
@@ -91,7 +91,13 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+div > h2 {
+	margin: 0 auto;
+	margin-top: 30px;
+}
 </style>
+
+
 
 
