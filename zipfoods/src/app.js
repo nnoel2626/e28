@@ -10,5 +10,6 @@ export const config = {
 }
 
 export let store = {
-    cartCount: 0
+    cartCount: 0,
+    
 }

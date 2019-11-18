@@ -10,8 +10,8 @@
 
 <script>
 import ShowProduct from "./../ShowProduct.vue";
-//productsimport * as app from "./../../app.js";
-import { products } from "./../../products.js";
+
+import * as app from "./../../app.js";
 
 export default {
 	name: "ProductsPage",
@@ -22,10 +22,14 @@ export default {
 
 	data: function() {
 		return {
-			products: products
+			products: null
 		};
 	},
-
+	mounted() {
+		app.axios.get(app.config.api + "products").then(response => {
+			this.products = response.data;
+		});
+	},
 	methods: {}
 };
 </script>

@@ -13,6 +13,7 @@
 			<div class="card-footer">
 				<p class="product-assigned_frequency">AF: {{ product.assigned_frequency }}</p>
 			</div>
+			 <router-link :to="{path: '/product/'+product.id }">View Product</router-link> 
 		</router-link>
 	</div>
 </template>

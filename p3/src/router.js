@@ -5,7 +5,7 @@ import Router from 'vue-router';
 import HomePage from './components/pages/HomePage.vue';
 import CategoriesPage from './components/pages/CategoriesPage.vue';
 import ProductsPage from './components/pages/ProductsPage.vue';
-import ProductDetailsPage from './components/pages/ProductDetailsPage.vue';
+import ProductPage from './components/pages/ProductPage.vue';
 import AddProductPage from './components/pages/AddProductPage.vue';
 import CartPage from './components/pages/CartPage.vue';
 //   Child components
@@ -34,14 +34,8 @@ export default new Router({
         {
             path: '/product/:id',
             name: 'product',
-            component: ProductDetailsPage,
-            // custom logic for mapping between route and props
-            props: (route) => ({
-                ...route.params
-            })
-            //props: dynamicPropsFn
-
-
+            component: ProductPage,
+            props: true
         },
         {
             path: '/addProduct',
@@ -55,14 +49,6 @@ export default new Router({
             name: 'cart',
             // beforeEnter: requireAuth
         },
-
-        // {
-        //     path: '/logout',
-        //     beforeEnter(to, from, next) {
-        //         auth.logout()
-        //         next('/')
-        //     }
-        // },
         {
             path: '*',
             redirect: '/'
@@ -73,6 +59,3 @@ export default new Router({
     mode: 'history'
 
 })
-
-
-

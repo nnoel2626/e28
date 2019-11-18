@@ -62,6 +62,13 @@
 
 export default {
 	name: "SearchProducts",
+
+	components: {
+		// FontAwesomeIcon
+	},
+	
+	props: ["myKey", "myDir"],
+
 	data() {
 		return {
 			searchTerm: ""
@@ -71,11 +78,6 @@ export default {
 		searchTerm: function() {
 			this.$emit("searchRecords", this.searchTerm);
 		}
-	},
-	props: ["myKey", "myDir"],
-
-	components: {
-		// FontAwesomeIcon
 	}
 };
 </script>

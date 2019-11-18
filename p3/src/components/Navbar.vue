@@ -5,6 +5,9 @@
 				<li class="navItem active" v-for="link in links" :key="link">
 					<router-link exact :to="{ name: link }">{{ link }}</router-link>
 				</li>
+				<!-- <li class="navItem active" v-for="link in links" :key="link">
+					<router-link v-if="link != 'product'" exact :to="{ name: link }">{{ link }}</router-link>
+				</li>-->
 			</ul>
 		</nav>
 	</header>
@@ -17,7 +20,7 @@ export default {
 	name: "Navbar",
 	data() {
 		return {
-			links: ["home", "categories", "products", "product", "addProduct", "cart"]
+			links: ["home", "categories", "products", "addProduct", "cart"]
 		}; //return
 	} //data
 };

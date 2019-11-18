@@ -8,7 +8,9 @@
 <script>
 //const axios = require("axios");
 import ShowProduct from "./../ShowProduct.vue";
+
 import * as app from "./../../app.js";
+
 export default {
 	name: "ProductsPage",
 	components: { ShowProduct },
@@ -17,6 +19,7 @@ export default {
 			products: null
 		};
 	},
+
 	mounted() {
 		app.axios.get(app.config.api + "products").then(response => {
 			this.products = response.data;
