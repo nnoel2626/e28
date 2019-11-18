@@ -25,28 +25,6 @@ export default {
 </script>
 
 <style scoped>
-/* .container {
-	margin: 0 auto;
-	margin-top: 30px;
-	display: flex;
-	align-items: space-between;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	width: 100%;
-	margin-top: 30px;
-	margin-bottom: 30px;
-} */
-
-/* .mainContent {
-	display: flex;
-	align-items: space-between;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	width: 100%;
-	margin-top: 30px;
-	margin-bottom: 30px;
-}  */
-
 div.row {
 	display: flex;
 	justify-content: center;

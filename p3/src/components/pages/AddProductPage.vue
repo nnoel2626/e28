@@ -224,17 +224,6 @@ export default {
 	justify-content: center;
 	flex-wrap: wrap;
 }
-/* div.row {
-	display: flex;
-	justify-content: center;
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-
-div > h2 {
-	margin: 0 auto;
-	margin-top: 30px;
-} */
 </style>
 
 

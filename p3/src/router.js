@@ -10,17 +10,7 @@ import AddProductPage from './components/pages/AddProductPage.vue';
 import CartPage from './components/pages/CartPage.vue';
 //   Child components
 
-
 Vue.use(Router);
-
-// function dynamicPropsFn(route) {
-//     const now = new Date()
-//     return {
-//         name: (now.getFullYear() + parseInt(route.params.years)) + '!'
-//     }
-// }
-
-
 
 export default new Router({
     routes: [{
@@ -86,9 +76,3 @@ export default new Router({
 
 
 
-// props: (route) => ({
-//query: route.query.q
-//})
-// props: true,
-// component: require('./components/pages/ProductDetailsPage').default
-//beforeEnter: requireAuth
