@@ -289,7 +289,7 @@ export const products = [{
     },
     {
         id: 19,
-        building: 'Cter For Eu Studies',
+        building: 'Center For EU Studies',
         room: 'Conference Room',
         make: 'Shure',
         model: 'ULX P4',

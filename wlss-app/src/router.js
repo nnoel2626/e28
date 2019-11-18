@@ -1,14 +1,17 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
+// Routable page components
+import LogInPage from './components/pages/LogInPage.vue';
+import RegisterPage from './components/pages/RegisterPage.vue';
+import HomePage from './components/pages/HomePage.vue';
+import UsersPage from './components/pages/UsersPage.vue';
+import ProductsPage from './components/pages/ProductsPage.vue';
+import ProductDetailsPage from './components/pages/ProductDetailsPage.vue';
+import AddProductPage from './components/pages/AddProductPage.vue';
 
-import LogIn from './components/LogIn.vue';
-import Register from './components/Register.vue';
-import Home from './components/Home.vue';
-import Users from './components/Users.vue';
-import ShowProducts from './components/ShowProducts.vue';
+//   Child components
 import ShowProduct from './components/ShowProduct.vue';
-import AddProduct from './components/AddProduct.vue';
 import SearchProducts from './components/SearchProducts.vue';
 
 
@@ -18,12 +21,12 @@ export default new Router({
     routes: [{
             path: '/users',
             name: 'users',
-            component: Users
+            component: UsersPage
         },
         {
             path: '/showProducts',
-            name: 'showProducts',
-            component: ShowProducts
+            name: 'productList',
+            component: ProductsPage
         },
         {
             path: '/showProduct',
@@ -31,9 +34,14 @@ export default new Router({
             component: ShowProduct
         },
         {
+            path: '/product/id',
+            name: 'pruductDetails',
+            component: ProductDetailsPage
+        },
+        {
             path: '/addProduct',
             name: 'addProduct',
-            component: AddProduct
+            component: AddProductPage
         },
         {
             path: '/searchProducts',
@@ -43,17 +51,17 @@ export default new Router({
         {
             path: '/',
             name: 'home',
-            component: Home
+            component: HomePage
         },
         {
             path: '/login',
             name: 'login',
-            component: LogIn
+            component: LogInPage
         },
         {
             path: '/register',
             name: 'register',
-            component: Register
+            component: RegisterPage
         },
         {
             path: '*',

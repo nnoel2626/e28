@@ -2,17 +2,15 @@
 	<div id="app">
 		<Navbar />
 		<div id="app-container">
-			<router-view/> 
+			<router-view />
 		</div>
 		<Footer />
 	</div>
 </template>
 <script>
-// import { products } from "./wirelessListArray.js";
-
+// import { products } from "./products.js";
 import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/Footer.vue";
-import './wirelessListArray.js';
 
 export default {
 	name: "app",
@@ -23,6 +21,8 @@ export default {
 };
 </script>
 
-<style >
-/* @import url("https://fonts.googleapis.com/css?family=Lato:400,700"); */
+<style lang="scss">
+// $image-path: "~@/../mdb/mdbvue/img"; // image path variable update
+// @import "~@/../mdb/mdbvue/scss/mdb.scss"; // main mdb scss file
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"); // font import
 </style>

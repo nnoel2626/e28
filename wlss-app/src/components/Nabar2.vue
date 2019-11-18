@@ -56,7 +56,7 @@
 
 
 
-<b-form @submit="onSubmit" v-if="show">
+						<b-form @submit="onSubmit" v-if="show">
 							<b-form-group id="exampleInputGroup1" label="firstName:" label-for="firstName">
 								<b-form-input
 									id="firstName"
@@ -75,13 +75,13 @@
 									placeholder="Enter lastName"
 								></b-form-input>
 							</b-form-group>
-							<b-form-group label="userName:" label-for="userName">
+							<b-form-group label="email:" label-for="email">
 								<b-form-input
-									id="userName"
-									type="userName"
-									v-model="form.userName"
+									id="email"
+									type="email"
+									v-model="form.email"
 									required
-									placeholder="Enter userName"
+									placeholder="Enter email"
 								></b-form-input>
 							</b-form-group>
 							<b-form-group label="Password:" label-for="password">

@@ -24,7 +24,7 @@ export default {
 } */
 footer#custom-footer {
 	height: 4rem;
-	background-color: #373f46;
+	background-color: #353535;
 	font-size: 1rem;
 	/* position: fixed; */
 	/* bottom: 0; */

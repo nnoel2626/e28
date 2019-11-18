@@ -1,14 +1,20 @@
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbvue/lib/mdbvue.css';
+
 import Vue from 'vue';
 import App from './App.vue';
 import BootstrapVue from 'bootstrap-vue';
 import router from './router';
 import VueLodash from 'vue-lodash';
 
+
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-
-
+import * as mdbvue from 'mdbvue'
+for (const component in mdbvue) {
+  Vue.component(component, mdbvue[component])
+}
 
 import {
   library

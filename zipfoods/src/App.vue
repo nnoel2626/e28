@@ -4,7 +4,7 @@
 
 		<nav>
 			<ul>
-				<li class= "nav-itme active" v-for="link in links" :key="link">
+				<li class="nav-itme active" v-for="link in links" :key="link">
 					<router-link exact :to="{ name: link }">
 						{{ link }}
 						<!-- <span v-if='link == "cart"'>({{ sharedState.cartCount }})</span> -->
@@ -19,8 +19,7 @@
 
 <script>
 //import { products } from "./products.js";
-//import * as app from "./app.js";
-
+import * as app from "./app.js";
 
 export default {
 	name: "app",

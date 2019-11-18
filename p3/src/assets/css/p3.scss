@@ -1,3 +1,7 @@
+// custom.scss
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+
 /* box sizing: http://www.paulirish.com/2012/box-sizing-border-box-ftw */
 * {
     -webkit-box-sizing: border-box;
@@ -100,8 +104,8 @@ nav ul {
         a.router-link-active:active,
         a.router-link-active:hover {
             text-decoration: none;
-            color: black;
-            // background-color: white;
+            color: $black;
+            background-color: white;
             cursor: inherit;
         }
     }

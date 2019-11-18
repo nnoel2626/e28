@@ -185,7 +185,7 @@
 <script>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 export default {
-	name: "AddProduct",
+	name: "AddProductPage",
 	data() {
 		return {
 			formData: []
@@ -221,22 +221,20 @@ export default {
 <style scoped>
 .container {
 	display: flex;
-	align-items: space-between;
-	justify-content: space-between;
+	justify-content: center;
 	flex-wrap: wrap;
 }
-div.row {
+/* div.row {
 	display: flex;
 	justify-content: center;
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
 
-
 div > h2 {
 	margin: 0 auto;
 	margin-top: 30px;
-}
+} */
 </style>
 
 

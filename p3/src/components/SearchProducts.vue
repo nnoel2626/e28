@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="container">
 		<b-input-group>
 			<b-form-input
 				id="SearchProds"
@@ -79,7 +79,6 @@ export default {
 	}
 };
 </script>
-
 
 <style scoped>
 .container {

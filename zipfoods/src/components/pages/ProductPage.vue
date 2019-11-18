@@ -1,11 +1,10 @@
 <template>
 	<div id="product-page" v-if="product">
-		<h1>{{ product.name }}</h1>
-		<img
-			v-if="product.id"
-			class="product-thumb"
-			:alt=""Product image of  " + product.name"
-			:src=""./../../assets/images/products/" + product.id + ".jpg""
+		<h1>{{ product.name }}</h1><img
+		v-if="product.id"
+		class="product-thumb"
+		:alt=""Product image of " + product.name"
+		:src=""./../../assets/images/products/" + product.id + ".jpg""
 		/>
 		<p class="description">{{ product.description }}</p>
 		<div class="price">${{ product.price }}</div>
@@ -16,7 +15,7 @@
 			<div class="alert" v-if="addAlert">Your cart has been updated!</div>
 		</transition>
 
-		<router-link :to=""/products"">&larr; Return to all products</router-link>
+		<router-link :to="/products">&larr; Return to all products</router-link>
 	</div>
 </template>
 
@@ -29,26 +28,25 @@ export default {
 	props: ["id"],
 	data: function() {
 		return {
-            product
-			// product: null,
-			// addAlert: false
+			product: null,
+			addAlert: false
 		};
 	},
-	// mounted() {
-	// 	app.axios.get(app.config.api + "/products/" + this.id).then(response => {
-	// 		this.product = response.data;
-	// 	});
-	// },
+	mounted() {
+		app.axios.get(app.config.api + "/products/" + this.id).then(response => {
+			this.product = response.data;
+		});
+	},
 
-	// methods: {
-	// 	addToCart: function(productId) {
-	// 		let cart = new app.Cart();
-	// 		cart.add(productId);
-	// 		app.store.cartCount = cart.count();
-	// 		this.addAlert = true;
-	// 		setTimeout(() => (this.addAlert = false), 3000);
-	// 	}
-	// }
+	methods: {
+		addToCart: function(productId) {
+			let cart = new app.Cart();
+			cart.add(productId);
+			app.store.cartCount = cart.count();
+			this.addAlert = true;
+			setTimeout(() => (this.addAlert = false), 3000);
+		}
+	}
 };
 </script>
 

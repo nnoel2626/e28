@@ -1,9 +1,11 @@
 <template>
-	<div id="featured">
-		<h2>Featured Products</h2>
-		<ul class="cleanList">
-			<li v-for="product in featuredProducts" :key="product.id">{{ product.name }}</li>
-		</ul>
+	<div class="container">
+		<div id="featured">
+			<h2>Featured Products</h2>
+			<ul class="cleanList">
+				<li v-for="product in featuredProducts" :key="product.id">{{ product.name }}</li>
+			</ul>
+		</div>
 	</div>
 </template>
 
@@ -15,6 +17,7 @@ import { products } from "./../products.js";
 export default {
 	name: "ShowFeatured",
 	props: ["category"],
+
 	computed: {
 		featuredProducts: function() {
 			function isMatch(product) {
@@ -32,4 +35,9 @@ export default {
 </script>
 
 <style scoped>
+.container {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
 </style>
