@@ -5,17 +5,12 @@
 				<li class="navItem active" v-for="link in links" :key="link">
 					<router-link exact :to="{ name: link }">{{ link }}</router-link>
 				</li>
-				<!-- <li class="navItem active" v-for="link in links" :key="link">
-					<router-link v-if="link != 'product'" exact :to="{ name: link }">{{ link }}</router-link>
-				</li>-->
 			</ul>
 		</nav>
 	</header>
 </template>
 
 <script>
-// import * as auth from "../services/AuthService";
-
 export default {
 	name: "Navbar",
 	data() {

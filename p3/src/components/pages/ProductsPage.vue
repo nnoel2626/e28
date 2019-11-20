@@ -1,17 +1,19 @@
 <template>
-	<div class="container">
-		<h2>List of Wireless Microphones</h2>
-		<div class="mainContent">
-			<!-- show-product v-for="product in filteredProds" :key="product.id" :product="product"></show-product> -->
-			<show-product v-for="product in products" :key="product.id" :product="product"></show-product>
+	<div>
+		<div class="container">
+			<h2>List of Wireless Microphones</h2>
+			<div class="mainContent">
+				<div v-for="product in products" :key="product.id">
+					<show-product :product="product"></show-product>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-import ShowProduct from "./../ShowProduct.vue";
-
 import * as app from "./../../app.js";
+import ShowProduct from "./../ShowProduct.vue";
 
 export default {
 	name: "ProductsPage",
@@ -26,11 +28,18 @@ export default {
 		};
 	},
 	mounted() {
-		app.axios.get(app.config.api + "products").then(response => {
-			this.products = response.data;
-		});
-	},
-	methods: {}
+		this.products = app.axios
+			.get(app.config.api + "products")
+			.then(response => (this.products = response.data));
+		console.log(app.config.api);
+	}
+
+	// mounted() {
+	// 	app.axios.get(app.config.api + "products").then(response => {
+	// 		this.products = response.data;
+	// 		console.log(app.config.api)
+	// 	});
+	// }
 };
 </script>
 <style scoped>
@@ -118,3 +127,5 @@ div > h2 {
 	margin-top: 30px;
 }
 </style>
+
+<!-- show-product v-for="product in filteredProds" :key="product.id" :product="product"></show-product> -->

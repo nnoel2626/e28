@@ -6,7 +6,7 @@
 </template>
 
 <script>
-//const axios = require("axios");
+
 import ShowProduct from "./../ShowProduct.vue";
 
 import * as app from "./../../app.js";
@@ -20,11 +20,13 @@ export default {
 		};
 	},
 
-	mounted() {
-		app.axios.get(app.config.api + "products").then(response => {
-			this.products = response.data;
-		});
-	}
+	
+
+	// mounted() {
+	// 	app.axios.get(app.config.api + "products").then(response => {
+	// 		this.products = response.data;
+	// 	});
+	// }
 };
 </script>
 

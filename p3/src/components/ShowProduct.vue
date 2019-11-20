@@ -1,20 +1,24 @@
 <template>
-	<div class="card">
-		<router-link :to="{ name: 'product', params: {'id' : product.id }}">
-			<div class="card-header">
-				<h5 class="card-header-product-building">{{product.building }}</h5>
-				<h6 class="product-room">{{ product.room }}</h6>
+	<div>
+		<div class="container product">
+			<div class="card text-left">
+				<div class="card-header">
+					<p class="card-header-title">Building: {{ product.model}}</p>
+				</div>
+				<p class="product-subtitle mb-2">Room: {{ product.building }}</p>
+				<p class="product-subtitle mb-2">Room: {{ product.room }}</p>
+
+				<div class="card-content">
+					<p>Frequency: {{ product.assigned_freq }}</p>
+					<p>Frequency: {{ product.group }} and{{ product.channel }}</p>
+				</div>
+				<div class="card-footer bg-transparent">
+					<router-link :to="{ name: 'product', params: {'id' : product.id }}">
+						<b-button variant="primary">View Mic Details</b-button>
+					</router-link>
+				</div>
 			</div>
-			<div class="card-content">
-				<div class="card-content-text">Make: {{ product.make }}</div>
-				<div class="card-content-text">Model: {{ product.model }}</div>
-				<div class="card-content-text">Mic Type: {{ product.mic_type }}</div>
-			</div>
-			<div class="card-footer">
-				<p class="product-assigned_frequency">AF: {{ product.assigned_frequency }}</p>
-			</div>
-			 <router-link :to="{path: '/product/'+product.id }">View Product</router-link> 
-		</router-link>
+		</div>
 	</div>
 </template>
 
@@ -41,6 +45,6 @@ div > h2 {
 
 
 
-
+ <!-- <router-link :to="{path: '/product/'+product.id }">View Product</router-link>  -->
 
 

@@ -10,7 +10,6 @@
 <script>
 // ToDo: Refactor this component so it gets products from the API rather than products.js
 
-
 export default {
 	name: "ShowFeatured",
 

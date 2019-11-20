@@ -9,7 +9,6 @@
 
 
 <script>
-
 import * as app from "./../../app.js";
 
 export default {
@@ -27,7 +26,7 @@ export default {
 			let categories = this.products.map(product => product.categories);
 			let mergedCategories = [].concat.apply([], categories);
 			//Return unique, sorted categories
-			 this.categories = [...new Set(mergedCategories)].sort();
+			this.categories = [...new Set(mergedCategories)].sort();
 		}
 	},
 
@@ -42,21 +41,22 @@ export default {
 
 <style scoped>
 .container {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-}
-/* div.row {
-	display: flex;
-	justify-content: center;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	text-align: center;
+	list-style-type: none;
 }
 
 div > h2 {
 	margin: 0 auto;
 	margin-top: 30px;
-} */
+	margin-bottom: 30px;
+}
+.cleanList,
+data-v-34a429a6 {
+	margin: 0 auto;
+	text-transform: uppercase;
+	list-style-type: none;
+	padding: 0;
+}
 </style>
 
 

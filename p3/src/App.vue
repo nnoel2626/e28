@@ -2,16 +2,16 @@
 	<div id="app">
 		<Navbar />
 		<div id="app-container">
-			<router-view />
+			<router-view></router-view>
 		</div>
 		<Footer />
 	</div>
 </template>
 <script>
-
-
 import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/Footer.vue";
+
+import * as app from "./app.js";
 
 export default {
 	name: "app",
@@ -22,22 +22,16 @@ export default {
 
 	data: function() {
 		return {
-			links: [
-				"home",
-				"categories",
-				"productList",
-				"productDetails",
-				"addproduct",
-				"cart"
-			]
-			// sharedState: app.store
+			links: ["home", "categories", "productList",  "cart"],
+			sharedState: app.store,
+			cart: []
 		};
-	}
+	},
 
-	// mounted() {
-	// 	this.cart = new app.Cart();
-	// 	app.store.cartCount = this.cart.count();
-	// }
+	mounted() {
+		this.cart = new app.Cart();
+		app.store.cartCount = this.cart.count();
+	}
 };
 </script>
 
@@ -57,12 +51,5 @@ html {
 	padding: 0;
 }
 
-/* body {
-	text-align: center;
-} */
-#app-container {
-	/* display: flex; */
-	/* justify-content: center; */
-	/* align-items: center; */
-}
+
 </style>

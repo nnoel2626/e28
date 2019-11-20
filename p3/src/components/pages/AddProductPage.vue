@@ -3,7 +3,7 @@
 		<div class="col-12">
 			<div class="card textcenter mt-3">
 				<div class="card-header bg-secondary text-white">
-					<font-awesome-icon icon="plus" class="mr-3" />Add New Product
+					<font-awesome-icon class="mr-3" />Add New Product
 				</div>
 
 				<div class="card-body">

@@ -8,23 +8,28 @@
 			<b-button variant="primary" href="#">Login</b-button>
 			<b-button variant="success" href="#">Register</b-button>
 		</b-jumbotron>
+
 		<show-featured :category="featuredCategory"></show-featured>
+		<span>There are currently {{ sharedState.products.length }} categories of products in the database.</span>
+		<br />
+		<br />
+		<span>This month's featured recipes</span>
+		<!-- <show-featured :installed Mic"='1'></show-featured>
+		<show-featured :="portable Mic"></show-featured>-->
 	</div>
 </template>
 
 <script>
+import * as app from "./../../app.js";
 import ShowFeatured from "./../ShowFeatured.vue";
 
 export default {
 	name: "HomePage",
-
-	components: {
-		ShowFeatured
-	},
-
+	components: { ShowFeatured },
 	data: function() {
 		return {
-			featuredCategory: "portable"
+			sharedState: app.store,
+			featuredCategory: ["portable Mic", "installed Mic"]
 		};
 	}
 };

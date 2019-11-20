@@ -1,4 +1,5 @@
-export const products = [{
+export const products = [
+    {
         id: 1,
         building: 'Barker Center',
         room: 'Thompson',

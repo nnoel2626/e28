@@ -1,34 +1,32 @@
 <template>
-	<div class="container">
-		<div id="featured">
-			<h2>Featured Products</h2>
-			<ul class="cleanList">
-				<li v-for="product in featuredProducts" :key="product.id">{{ product.assigned_frequency}}</li>
-			</ul>
-		</div>
+	<div id="featured" class="container">
+		<h2>Featured Products</h2>
+		<ul class="cleanList">
+			<li v-for="product in featuredProducts" :key="product.id">{{ product.model }}</li>
+		</ul>
 	</div>
 </template>
 
 <script>
-// ToDo: Refactor this component so it gets products from the API rather than products.js
-
-import { products } from "./../products.js";
-
+import * as app from "./../app.js";
 export default {
 	name: "ShowFeatured",
+
 	props: ["category"],
 
 	computed: {
+		
 		featuredProducts: function() {
 			function isMatch(product) {
-				return product.categories.includes(this);
+				return product.categories == this;
 			}
-			return this.products.filter(isMatch, this.category);
+			return this.sharedState.products.filter(isMatch, this.category);
 		}
 	},
+
 	data: function() {
 		return {
-			products: products
+			sharedState: app.store
 		};
 	}
 };
@@ -39,5 +37,10 @@ export default {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
+}
+#featured {
+	background-color: lighten(#7fdbff, 10%);
+	border-radius: 5px;
+	padding: 10px;
 }
 </style>

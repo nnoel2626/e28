@@ -4,7 +4,7 @@
 			<span class="mr-4">&copy; 2019 Norcius Noel</span>
 			<span class="mr-4">Privacy</span>
 			<span>Terms of Service</span>
-			<hr />
+			<hr/>
 		</footer>
 	</div>
 </template>
