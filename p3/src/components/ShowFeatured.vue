@@ -14,8 +14,7 @@ export default {
 
 	props: ["category"],
 
-	computed: {
-		
+	computed: {		
 		featuredProducts: function() {
 			function isMatch(product) {
 				return product.categories == this;

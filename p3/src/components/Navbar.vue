@@ -15,7 +15,7 @@ export default {
 	name: "Navbar",
 	data() {
 		return {
-			links: ["home", "categories", "products", "addProduct", "cart"]
+			links: ["home", "categories", "products", "addProduct", "rentalCart"]
 		}; //return
 	} //data
 };

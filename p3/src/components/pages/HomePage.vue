@@ -29,7 +29,7 @@ export default {
 	data: function() {
 		return {
 			sharedState: app.store,
-			featuredCategory: ["portable Mic", "installed Mic"]
+			featuredCategory: ["portableMic", "installedMic"]
 		};
 	}
 };

@@ -1,21 +1,28 @@
 <template>
-	<div id="cart-page" class="container">
-		<h1>Your Cart</h1>
-		<div v-if="items.length == 0">No items</div>
-		<ul v-else-if="products.length > 0" class="cleanList">
-			<li v-for="item in items" :key="item.id">
-				<button @click="removeFromCart(item.id)">Remove</button>
-				{{ item.quantity }} x {{ getProductDetails(item.id)['model'] }}
-			</li>
-		</ul>
+	<div id="rentalCart-page" class="container my-5">
+		<div class="row mb-3">
+			<div class="col-md-9">
+				<h3>Your Rental Cart</h3>
+
+				<div v-if="items.length == 0">No items</div>
+
+				<ul v-else-if="products.length > 0" class="cleanList">
+					<li v-for="item in items" :key="item.id">
+						<button @click="removeFromCart(item.id)">Remove</button>
+						{{ item.quantity }} x {{ getProductDetails(item.id)['model'] }}
+					</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </template>
 
+
 <script>
 import * as app from "./../../app.js";
-//import { products } from "./../../products.js";
+
 export default {
-	name: "CartPage",
+	name: "RentalCartPage",
 	data: function() {
 		return {
 			items: [],
@@ -45,20 +52,10 @@ export default {
 };
 </script>
 <style scoped>
-.container {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-}
-/* div.row {
-	display: flex;
-	justify-content: center;
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-
 div > h2 {
 	margin: 0 auto;
 	margin-top: 30px;
-} */
+}
 </style>
+
+

@@ -7,7 +7,7 @@
 				type="text"
 				class="form-control"
 				aria-label="Search Products"
-				v-model="searchTerm"
+				v-model.lazy="searchTerm"
 			/>
 			<b-input-group-append>
 				<b-dropdown id="dropdown-menu" text="Sort By">
@@ -57,16 +57,16 @@
 </template>
 
 <script>
-// import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+//import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 //import * as app from "./../app.js";
 
 export default {
 	name: "SearchProducts",
 
 	components: {
-		// FontAwesomeIcon
+		//FontAwesomeIcon
 	},
-	
+
 	props: ["myKey", "myDir"],
 
 	data() {

@@ -11,7 +11,7 @@
 				<div class="card-content">
 					<p class="card-text">Device Make: {{ product.make }}</p>
 					<p class="card-text">Device Type: {{ product.mic_type }}</p>
-					<p class="card-text">Assigned Frequency: {{ product.assigned_freq }}</p>
+					<p class="card-text">Assigned Frequency: {{ product.Assigned_freq }}</p>
 					<p class="card-text">Device Group and Channel: {{ product.group }} and{{ product.channel }}</p>
 					<p class="card-text">Frequency Band: {{ product.Freq_band }}</p>
 					<p class="card-text">Frequency Range: {{ product.Freq_range }}</p>
@@ -41,15 +41,12 @@
 
 <script>
 import * as app from "./../../app.js";
-//import ShowProduct from "./../ShowProduct.vue";
 
 export default {
 	name: "ProductPage",
 	props: ["id"],
 
-	components: {
-		//ShowProduct
-	},
+	components: {},
 
 	data: function() {
 		return {
@@ -148,8 +145,15 @@ div.card-footer {
 	flex-shrink: 0;
 	justify-content: space-between;
 }
+
+.alert {
+	margin: 0 auto; 
+	width: 40%;
+	text-align: center;
+	background-color: #93c5d8;
+}
 </style>
 
 
-<!-- <router-link :to="{ name: "products"}">&larr; Return to all products</router-link> -->
+
 			

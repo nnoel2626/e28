@@ -2,6 +2,8 @@
 	<div>
 		<div class="container">
 			<h2>List of Wireless Microphones</h2>
+			<search-products @searchRecords="searchProducts" />
+
 			<div class="mainContent">
 				<div v-for="product in products" :key="product.id">
 					<show-product :product="product"></show-product>
@@ -14,34 +16,40 @@
 <script>
 import * as app from "./../../app.js";
 import ShowProduct from "./../ShowProduct.vue";
+import SearchProducts from "./../SearchProducts";
+//import _ from "lodash";
 
 export default {
 	name: "ProductsPage",
 
 	components: {
-		ShowProduct
+		ShowProduct,
+		SearchProducts
 	},
 
 	data: function() {
 		return {
-			products: null
+			products: null,
+			searchTerms: ""
 		};
 	},
 	mounted() {
 		this.products = app.axios
 			.get(app.config.api + "products")
-			.then(response => (this.products = response.data));
-		console.log(app.config.api);
-	}
+			.then(response => {
+				this.products = response.data;
+			});
+	},
 
-	// mounted() {
-	// 	app.axios.get(app.config.api + "products").then(response => {
-	// 		this.products = response.data;
-	// 		console.log(app.config.api)
-	// 	});
-	// }
+	methods: {
+		searchProducts: function(terms) {
+			this.searchTerms = terms;
+		}
+	}
 };
 </script>
+
+
 <style scoped>
 .container {
 	display: flex;
@@ -125,7 +133,7 @@ input-group {
 div > h2 {
 	margin: 0 auto;
 	margin-top: 30px;
+	margin-bottom: 30px;
 }
 </style>
 
-<!-- show-product v-for="product in filteredProds" :key="product.id" :product="product"></show-product> -->

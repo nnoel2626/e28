@@ -43,8 +43,3 @@ div > h2 {
 }
 </style>
 
-
-
- <!-- <router-link :to="{path: '/product/'+product.id }">View Product</router-link>  -->
-
-

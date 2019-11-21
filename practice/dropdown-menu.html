@@ -556,3 +556,43 @@
 // props: true,
 // component: require('./components/pages/ProductDetailsPage').default
 //beforeEnter: requireAuth
+
+
+
+<template>
+	<div id="app" class="container my-5">
+		<h1>My online store</h1>
+		<div class="row">
+			<div class="col-md-3" v-for="item in forSale">
+				{{ item. name }}
+			</div>
+		</div>
+	</div>
+</template>
+
+
+<div class="col-md-3" v-for="item in forSale">
+	<div class="card">
+		<img :src="item.image" :alt="item.name" class="card-img-top">
+		<div class="card-body">
+			<h4 class="card-title">{{ item.name }}</h4>
+			<div class="card-text">${{ item.price / 100 }}</div>
+			<div class="row justify-content-end">
+				<button class="btn btn-primary">Add to cart</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- <template>
+	<button class="btn btn-primary">Cart ({{ inCart.length }})</button>
+</template>
+ <script>
+// export default {
+//   name: 'shoppingCart',
+//   computed: {
+//     inCart() { return this.$store.getters.inCart; },
+//   },
+// };
+//
+</script> --->

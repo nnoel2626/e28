@@ -57,7 +57,7 @@ const routes = [{
   {
     path: '/cart',
     component: CartPage,
-    name: 'cart',
+    name: 'rentalCart',
     // beforeEnter: requireAuth
   },
   {
