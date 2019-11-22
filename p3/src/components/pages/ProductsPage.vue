@@ -40,7 +40,6 @@ export default {
 			productIndex: 0
 		};
 	},
-
 	mounted() {
 		this.products = app.axios.get(app.config.api + "products").then(
 			response =>
@@ -53,7 +52,6 @@ export default {
 				}))
 		);
 	},
-
 	methods: {
 		searchProds: function() {
 			return this.products.filter(item => {
