@@ -1,21 +1,21 @@
 <template>
-	<div class="container">
-		<b-jumbotron>
-			<template v-slot:header>Wireless Microphone App</template>
-			<template v-slot:lead>This App will make it easier to find wireless by building locations</template>
-			<hr class="my-4" />
-			<p>User needs to register or sign-in in order to use this app!</p>
-			<b-button variant="primary" href="#">Login</b-button>
-			<b-button variant="success" href="#">Register</b-button>
-		</b-jumbotron>
+	<div>
+		<div class="container">
+			<b-jumbotron>
+				<template v-slot:header>Wireless Microphone App</template>
+				<template v-slot:lead>This App will make it easier to find wireless by building locations</template>
+				<hr class="my-4" />
+				<p>User needs to register or sign-in in order to use this app!</p>
+				<b-button variant="primary" href="#">Login</b-button>
+				<b-button variant="success" href="#">Register</b-button>
+			</b-jumbotron>
 
-		<show-featured :category="featuredCategory"></show-featured>
-		<span>There are currently {{ sharedState.products.length }} categories of products in the database.</span>
-		<br />
-		<br />
-		<span>This month's featured recipes</span>
-		<!-- <show-featured :installed Mic"='1'></show-featured>
-		<show-featured :="portable Mic"></show-featured>-->
+			<show-featured :category="featuredCategory"></show-featured>
+			<span>There are currently {{ sharedState.products.length }} categories of products in the database.</span>
+			<br />
+			<br />
+			<span>This month's featured recipes</span>
+		</div>
 	</div>
 </template>
 
@@ -35,7 +35,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped="css">
 .container {
 	display: flex;
 	justify-content: center;

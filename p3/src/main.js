@@ -15,8 +15,6 @@ import ProductPage from "@/components/pages/ProductPage.vue";
 import AddProductPage from "@/components/pages/AddProductPage.vue";
 import CartPage from "@/components/pages/CartPage.vue";
 
-//import './style.css'
-//import './p3.scss'
 
 
 Vue.use(BootstrapVue)
@@ -37,7 +35,7 @@ const routes = [{
     //beforeEnter: requireAuth
   },
   {
-    path: '/productList',
+    path: '/products',
     name: 'products',
     component: ProductsPage,
     //beforeEnter: requireAuth

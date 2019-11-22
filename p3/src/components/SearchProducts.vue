@@ -7,7 +7,7 @@
 				type="text"
 				class="form-control"
 				aria-label="Search Products"
-				v-model.lazy="searchTerm"
+				v-model="searchTerm"
 			/>
 			<b-input-group-append>
 				<b-dropdown id="dropdown-menu" text="Sort By">
@@ -30,7 +30,7 @@
 						justify-content-between
 						href="#"
 						id="assigned_frequency"
-						@click="$emit('requestKey', 'assigned_frequency')"
+						@click="$emit('requestKey', 'assigned_freq')"
 					>Assigned Frequency</b-dropdown-item>
 
 					<b-dropdown-divider></b-dropdown-divider>

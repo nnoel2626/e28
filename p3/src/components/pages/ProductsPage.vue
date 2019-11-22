@@ -2,7 +2,13 @@
 	<div>
 		<div class="container">
 			<h2>List of Wireless Microphones</h2>
-			<search-products @searchRecords="searchProducts" />
+			<search-products
+				@searchRecords="searchProds"
+				:myKey="filterKey"
+				:myDir="filterDir"
+				@requestKey="changeKey"
+				@requestDir="changeDir"
+			/>
 
 			<div class="mainContent">
 				<div v-for="product in products" :key="product.id">
@@ -18,32 +24,55 @@ import * as app from "./../../app.js";
 import ShowProduct from "./../ShowProduct.vue";
 import SearchProducts from "./../SearchProducts";
 //import _ from "lodash";
-
 export default {
 	name: "ProductsPage",
-
 	components: {
 		ShowProduct,
 		SearchProducts
 	},
-
 	data: function() {
 		return {
 			products: null,
-			searchTerms: ""
+			searchedProducts: null,
+			searchTerms: "",
+			filterKey: "model",
+			filterDir: "asc",
+			productIndex: 0
 		};
 	},
+
 	mounted() {
-		this.products = app.axios
-			.get(app.config.api + "products")
-			.then(response => {
-				this.products = response.data;
-			});
+		this.products = app.axios.get(app.config.api + "products").then(
+			response =>
+				(this.products = response.data.map(item => {
+					//this.products = response.data;
+					item.productId = this.productIndex;
+					this.productIndex++;
+					return item;
+					//searchedProducts = response.data;
+				}))
+		);
 	},
 
 	methods: {
+		searchProds: function() {
+			return this.products.filter(item => {
+				return (
+					item.building.toLowerCase().match(this.searchTerms.toLowerCase()) ||
+					item.room.toLowerCase().match(this.searchTerms.toLowerCase()) ||
+					item.assigned_freq.toLowerCase().match(this.searchTerms.toLowerCase())
+				);
+			});
+		},
+
 		searchProducts: function(terms) {
 			this.searchTerms = terms;
+		},
+		changeKey: function(value) {
+			this.filterKey = value;
+		},
+		changeDir: function(value) {
+			this.filterDir = value;
 		}
 	}
 };
@@ -57,7 +86,6 @@ export default {
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
-
 .mainContent {
 	display: flex;
 	align-items: space-between;
@@ -67,7 +95,6 @@ export default {
 	margin-top: 30px;
 	margin-bottom: 30px;
 }
-
 div.row {
 	display: flex;
 	justify-content: center;
@@ -136,4 +163,3 @@ div > h2 {
 	margin-bottom: 30px;
 }
 </style>
-

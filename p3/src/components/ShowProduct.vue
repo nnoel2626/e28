@@ -3,9 +3,9 @@
 		<div class="container product">
 			<div class="card text-left">
 				<div class="card-header">
-					<p class="card-header-title">Building: {{ product.model}}</p>
+					<p class="card-header-title">Model: {{ product.model}}</p>
 				</div>
-				<p class="product-subtitle mb-2">Room: {{ product.building }}</p>
+				<p class="product-subtitle mb-2">Building: {{ product.building }}</p>
 				<p class="product-subtitle mb-2">Room: {{ product.room }}</p>
 
 				<div class="card-content">
