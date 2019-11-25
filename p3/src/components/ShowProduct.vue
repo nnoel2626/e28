@@ -23,9 +23,21 @@
 </template>
 
  <script>
+
+ //import * as app from "./../app.js";
 export default {
 	name: "ShowProduct",
-	props: ["product"]
+	props: ["product"],
+	data() {
+		return {
+			//sharedState: app.store,
+			//searchTerm: ""
+			myKey:"SearchPRoduct",
+			myDir:"SearchPRoduct"
+
+		};
+	},
+	
 };
 </script>
 

@@ -30,6 +30,7 @@ export default {
 
 	mounted() {
 		this.cart = new app.Cart();
+
 		app.store.cartCount = this.cart.count();
 	}
 };

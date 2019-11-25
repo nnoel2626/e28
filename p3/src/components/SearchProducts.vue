@@ -3,13 +3,13 @@
 		<b-input-group>
 			<b-form-input
 				id="SearchProds"
-				placeholder="Search"
+				placeholder="Search Products by model"
 				type="text"
 				class="form-control"
 				aria-label="Search Products"
 				v-model="searchTerm"
-			/>
-			<b-input-group-append>
+				/>
+			<!-- <b-input-group-append>
 				<b-dropdown id="dropdown-menu" text="Sort By">
 					<b-dropdown-item
 						d-flex
@@ -50,8 +50,8 @@
 						id="desc"
 						@click="$emit('requestDir', 'desc')"
 					>Desc</b-dropdown-item>
-				</b-dropdown>
-			</b-input-group-append>
+				</b-dropdown> 
+			</b-input-group-append> -->
 		</b-input-group>
 	</div>
 </template>
@@ -71,9 +71,12 @@ export default {
 
 	data() {
 		return {
+			product:"ShowProdut",
+			//sharedState: app.store,
 			searchTerm: ""
 		};
 	},
+	
 	watch: {
 		searchTerm: function() {
 			this.$emit("searchRecords", this.searchTerm);

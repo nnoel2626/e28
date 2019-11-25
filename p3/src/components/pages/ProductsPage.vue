@@ -2,18 +2,9 @@
 	<div>
 		<div class="container">
 			<h2>List of Wireless Microphones</h2>
-			<search-products
-				@searchRecords="searchProds"
-				:myKey="filterKey"
-				:myDir="filterDir"
-				@requestKey="changeKey"
-				@requestDir="changeDir"
-			/>
-
+			<search-products @searchRecords="searchRecords"/>
 			<div class="mainContent">
-				<div v-for="product in products" :key="product.id">
-					<show-product :product="product"></show-product>
-				</div>
+            <show-product v-for="product in products" :key="product.id" :product="product"></show-product>
 			</div>
 		</div>
 	</div>
@@ -24,55 +15,49 @@ import * as app from "./../../app.js";
 import ShowProduct from "./../ShowProduct.vue";
 import SearchProducts from "./../SearchProducts";
 //import _ from "lodash";
+
 export default {
 	name: "ProductsPage",
 	components: {
-		ShowProduct,
-		SearchProducts
+		'show-product':	ShowProduct,
+		'search-products':SearchProducts
 	},
 	data: function() {
 		return {
-			products: null,
-			searchedProducts: null,
-			searchTerms: "",
-			filterKey: "model",
-			filterDir: "asc",
-			productIndex: 0
-		};
+		sharedState: app.store,		
+		searchTerms: "",
+		product:"",
+		products:"",
+		filterKey: "model",
+		filterDir: "asc",	  
+		}
 	},
+
 	mounted() {
-		this.products = app.axios.get(app.config.api + "products").then(
-			response =>
-				(this.products = response.data.map(item => {
-					//this.products = response.data;
-					item.productId = this.productIndex;
-					this.productIndex++;
-					return item;
-					//searchedProducts = response.data;
-				}))
-		);
+		app.axios.get(app.config.api + "products")
+		.then(response => {
+			this.products = response.data;
+			//this.searchedProdducts();
+		});
 	},
-	methods: {
-		searchProds: function() {
-			return this.products.filter(item => {
-				return (
-					item.building.toLowerCase().match(this.searchTerms.toLowerCase()) ||
-					item.room.toLowerCase().match(this.searchTerms.toLowerCase()) ||
-					item.assigned_freq.toLowerCase().match(this.searchTerms.toLowerCase())
-				);
-			});
+
+
+	methods:{
+		searchRecords: function(terms) {
+			this.searchTerms = terms;
+		}
+	},
+
+	computed: {
+		searchedProds: function () {
+			return this.products.filter( function(product) {
+				return (product.model.toLowerCase().includes(this.searchTerms.toLowerCase()))
+			})
 		},
 
-		searchProducts: function(terms) {
-			this.searchTerms = terms;
-		},
-		changeKey: function(value) {
-			this.filterKey = value;
-		},
-		changeDir: function(value) {
-			this.filterDir = value;
-		}
-	}
+	},
+
+
 };
 </script>
 
@@ -161,3 +146,33 @@ div > h2 {
 	margin-bottom: 30px;
 }
 </style>
+
+
+
+	// mounted() {
+	// 	this.products = app.axios.get(app.config.api + "products").then(
+	// 		response =>
+	// 			(this.products = response.data.map(item => {
+	// 				//this.products = response.data;
+	// 				item.productId = this.productIndex;
+	// 				this.productIndex++;
+	// 				return item;
+	// 				//searchedProducts = response.data;
+	// 			}))
+	// 	);
+	// },
+
+
+
+	// computed: {
+	// 	searchProds: function() {
+	// 		return this.products.filter(item => {
+	// 			return (
+	// 				item.building.toLowerCase().match(this.searchTerms.toLowerCase()) ||
+	// 				item.room.toLowerCase().match(this.searchTerms.toLowerCase()) ||
+	// 				item.assigned_freq.toLowerCase().match(this.searchTerms.toLowerCase())
+	// 			).bind(this);
+	// 		})
+	// 	},
+
+	// },

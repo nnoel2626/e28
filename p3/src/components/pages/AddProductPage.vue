@@ -3,9 +3,8 @@
 		<div class="col-12">
 			<div class="card textcenter mt-3">
 				<div class="card-header bg-secondary text-white">
-					<font-awesome-icon class="mr-3" />Add New Product
+				<span class="glyphicon glyphicon-plus"></span>Add New Product
 				</div>
-
 				<div class="card-body">
 					<form id="addProdForm" @submit.prevent="requestAdd">
 						<div class="form-group form-row">
@@ -178,25 +177,30 @@
 					</form>
 				</div>
 			</div>
+			<transition name="fade">
+			<div class="alert" v-if="addAlert">Your product  has been updated!</div>
+		</transition>
 		</div>
 	</div>
 </template>
 
 <script>
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
 export default {
 	name: "AddProductPage",
 	data() {
 		return {
-			formData: []
+			product:[],
+			formData: [],
+			addAlert: false
 		};
 	},
 	components: {
-		FontAwesomeIcon
+	
 	},
 	methods: {
 		requestAdd: function() {
-			this.formData = {
+			let formData = {
 				building: this.formData.building,
 				room: this.formData.room,
 				make: this.formData.make,
@@ -209,9 +213,14 @@ export default {
 				freq_range: this.formData.freq_range,
 				assigned_frequency: this.formData.assigned_frequency,
 				comments: this.formData.comments
-			};
-			this.$emit("add", this.formData);
+			}
+			this.$emit("addRecord", formData);
+			this.formData.push(this.product),
+			localStorage.setItem("product", JSON.stringify(this.formData))
+			this.addAlert = true;
+			setTimeout(() => (this.addAlert = false), 3000);
 			this.formData = [];
+			
 		}
 	}
 };
@@ -223,6 +232,13 @@ export default {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
+}
+
+.alert {
+	margin: 0 auto; 
+	width: 40%;
+	text-align: center;
+	background-color: #93c5d8;
 }
 </style>
 
