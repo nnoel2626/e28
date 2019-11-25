@@ -2,9 +2,9 @@
 	<div>
 		<div class="container">
 			<h2>List of Wireless Microphones</h2>
-			<search-products @searchRecords="searchRecords"/>
+			
 			<div class="mainContent">
-            <show-product v-for="product in products" :key="product.id" :product="product"></show-product>
+				<show-product v-for="product in products" :key="product.id" :product="product"></show-product>
 			</div>
 		</div>
 	</div>
@@ -13,51 +13,45 @@
 <script>
 import * as app from "./../../app.js";
 import ShowProduct from "./../ShowProduct.vue";
-import SearchProducts from "./../SearchProducts";
-//import _ from "lodash";
+
 
 export default {
 	name: "ProductsPage",
 	components: {
-		'show-product':	ShowProduct,
-		'search-products':SearchProducts
+		"show-product": ShowProduct
+		//"search-products": SearchProducts
 	},
 	data: function() {
 		return {
-		sharedState: app.store,		
-		searchTerms: "",
-		product:"",
-		products:"",
-		filterKey: "model",
-		filterDir: "asc",	  
-		}
+			sharedState: app.store,
+			searchQuery: "",
+			products:[]
+		};
 	},
 
 	mounted() {
-		app.axios.get(app.config.api + "products")
-		.then(response => {
+		app.axios.get(app.config.api + "products").then(response => {
 			this.products = response.data;
-			//this.searchedProdducts();
 		});
 	},
 
-
-	methods:{
+	methods: {
 		searchRecords: function(terms) {
 			this.searchTerms = terms;
 		}
 	},
 
 	computed: {
-		searchedProds: function () {
-			return this.products.filter( function(product) {
-				return (product.model.toLowerCase().includes(this.searchTerms.toLowerCase()))
-			})
-		},
-
-	},
-
-
+		filteredResources() {
+			if (this.searchQuery) {
+				return this.products.filter(product => {
+					return product.model.includes(this.searchQuery);
+				});
+			} else {
+				return this.products;
+			}
+		}
+	}
 };
 </script>
 
@@ -148,31 +142,3 @@ div > h2 {
 </style>
 
 
-
-	// mounted() {
-	// 	this.products = app.axios.get(app.config.api + "products").then(
-	// 		response =>
-	// 			(this.products = response.data.map(item => {
-	// 				//this.products = response.data;
-	// 				item.productId = this.productIndex;
-	// 				this.productIndex++;
-	// 				return item;
-	// 				//searchedProducts = response.data;
-	// 			}))
-	// 	);
-	// },
-
-
-
-	// computed: {
-	// 	searchProds: function() {
-	// 		return this.products.filter(item => {
-	// 			return (
-	// 				item.building.toLowerCase().match(this.searchTerms.toLowerCase()) ||
-	// 				item.room.toLowerCase().match(this.searchTerms.toLowerCase()) ||
-	// 				item.assigned_freq.toLowerCase().match(this.searchTerms.toLowerCase())
-	// 			).bind(this);
-	// 		})
-	// 	},
-
-	// },

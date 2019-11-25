@@ -9,8 +9,7 @@
 				<b-button variant="primary" href="#">Login</b-button>
 				<b-button variant="success" href="#">Register</b-button>
 			</b-jumbotron>
-			<div class="mainContent">	
-				
+			<div class="mainContent">
 				<show-featured></show-featured>
 			</div>
 		</div>
@@ -28,8 +27,7 @@ export default {
 
 	data: function() {
 		return {
-			sharedState: app.store,
-			//featuredCategory: ["portableMic", "installedMic"]
+			sharedState: app.store
 		};
 	}
 };
@@ -37,12 +35,10 @@ export default {
 
 <style scoped="css">
 .container {
-	margin-top:3rem;
+	margin-top: 3rem;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
 	text-align: center;
 }
-
-
 </style>

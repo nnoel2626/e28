@@ -75,10 +75,6 @@ nav.home nav.addProduct nav.categories nav.productList nav.productDetails {
 	background-color: #5a58e3;
 }
 
-/* p {
-	text-align: center;
-	color: #7e9098;
-	font-size: 22px;
-} */
+
 </style>
 

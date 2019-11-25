@@ -11,6 +11,8 @@ export const config = {
 
 export let store = {
     cartCount: 0,
-  //products:null,
-    
+    products: null,
+    product: null,
+
+
 }
