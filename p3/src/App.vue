@@ -1,11 +1,11 @@
 <template>
-	<div id="app">
+	<!-- <div id="app">
 		<Navbar />
 		<div id="app-container">
 			<router-view></router-view>
 		</div>
 		<Footer />
-	</div>
+	</div>-->
 </template>
 <script>
 import Navbar from "@/components/Navbar.vue";
@@ -14,30 +14,27 @@ import Footer from "@/components/Footer.vue";
 import * as app from "./app.js";
 
 export default {
-	name: "app",
-	components: {
-		Navbar,
-		Footer
-	},
-
-	data: function() {
-		return {
-			links: ["home", "categories", "productList",  "cart"],
-			sharedState: app.store,
-			cart: []
-		};
-	},
-
-	mounted() {
-		this.cart = new app.Cart();
-
-		app.store.cartCount = this.cart.count();
-	}
+	// name: "app",
+	// components: {
+	// 	Navbar,
+	// 	Footer
+	// },
+	// data: function() {
+	// 	return {
+	// 		links: ["home", "categories", "productList",  "cart"],
+	// 		sharedState: app.store,
+	// 		cart: []
+	// 	};
+	// },
+	// mounted() {
+	// 	this.cart = new app.Cart();
+	// 	app.store.cartCount = this.cart.count();
+	// }
 };
 </script>
 
 <style lang='css'>
-html {
+/* html {
 	box-sizing: border-box;
 	font-family: "Open Sans", sans-serif;
 }
@@ -50,7 +47,5 @@ html {
 * {
 	margin: 0;
 	padding: 0;
-}
-
-
+} */
 </style>

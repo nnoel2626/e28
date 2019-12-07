@@ -2,7 +2,7 @@
 	<div>
 		<div class="container">
 			<h2>List of Wireless Microphones</h2>
-			
+
 			<div class="mainContent">
 				<show-product v-for="product in products" :key="product.id" :product="product"></show-product>
 			</div>
@@ -14,7 +14,6 @@
 import * as app from "./../../app.js";
 import ShowProduct from "./../ShowProduct.vue";
 
-
 export default {
 	name: "ProductsPage",
 	components: {
@@ -25,7 +24,7 @@ export default {
 		return {
 			sharedState: app.store,
 			searchQuery: "",
-			products:[]
+			products: []
 		};
 	},
 
@@ -142,3 +141,15 @@ div > h2 {
 </style>
 
 
+// fetchProducts({ commit }) {
+    //   axios({
+    //     methods: "get",
+    //     url:
+    //       "https://my-json-server.typicode.com/nnoel2626/e28-p3-api/products",
+    //     order: "categories"
+    //   })
+    //     .then(response => commit("setProducts", response.data))
+    //     .catch(error => console.log(error));
+	<
+!-- -- // https://stackoverflow.com/questions/39156533/firebase-database-returns-null-at-beginning-of-each-new-node---->
+    // }
