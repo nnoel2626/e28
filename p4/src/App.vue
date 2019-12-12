@@ -1,41 +1,43 @@
 <template>
-	<div id="app">
-		<Navbar />
-		<router-view></router-view>
-		<br />
-		<br />
-		<Footer />
-	</div>
+  <div id="app">
+    <Navbar />
+    <router-view></router-view>
+    <br />
+    <br />
+    <Footer />
+  </div>
 </template>
 <script>
 import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/Footer.vue";
 import * as app from "./app.js";
 
+console.log(process.env.NODE_ENV);
+
 export default {
-	name: "app",
-	components: {
-		Navbar,
-		Footer
-	},
+  name: "app",
+  components: {
+    Navbar,
+    Footer
+  },
 
-	data: function() {
-		return {
-			links: ["home", "categories", "products", "cart"]
-			// cart: []
-		};
-	},
-	computed: {
-		cartCount: function() {
-			return this.$store.state.cartCount;
-		}
-	},
+  data: function() {
+    return {
+      links: ["home", "products", "categories", "create", "cart"]
+      // cart: []
+    };
+  },
+  computed: {
+    cartCount: function() {
+      return this.$store.state.cartCount;
+    }
+  },
 
-	mounted() {
-		this.cart = new app.Cart();
-		this.$store.commit("setCartCount", this.cart.count());
-		this.$store.dispatch("setProducts");
-	}
+  mounted() {
+    this.cart = new app.Cart();
+    this.$store.commit("setCartCount", this.cart.count());
+    this.$store.dispatch("setProducts");
+  }
 };
 </script>
 <style></style>

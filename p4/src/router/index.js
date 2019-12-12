@@ -9,11 +9,26 @@ import CartPage from "@/components/pages/CartPage.vue";
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
+const routes = [{
     path: "/",
     name: "home",
     component: HomePage
+  },
+  {
+    path: "/products",
+    name: "products",
+    component: ProductsPage
+  },
+  {
+    path: "/product/create",
+    name: "create",
+    component: AddProductPage
+  },
+  {
+    path: "/product/:slug",
+    component: ProductPage,
+    name: "product",
+    props: true
   },
   {
     path: "/categories",
@@ -21,21 +36,6 @@ const routes = [
     component: CategoriesPage
   },
 
-  {
-    path: "/products",
-    name: "products",
-    component: ProductsPage
-  },
-  {
-    path: "/product",
-    name: "product",
-    component: ProductPage
-  },
-  {
-    path: "/addProduct",
-    name: "addProduct",
-    component: AddProductPage
-  },
   {
     path: "/cart",
     name: "cart",

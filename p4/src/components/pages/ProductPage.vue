@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Wireless Microphone Details</h2>
-    <div class="card-container">
+    <div class="card-container" id="product-page" v-if="product">
       <div class="card text-left">
         <div class="card-header">
           <h4 class="card-header-title">Building: {{ product.model }}</h4>
@@ -24,7 +24,7 @@
           <p class="card-text">Serial Number: {{ product.serial_number }}</p>
         </div>
         <div class="card-footer bg-transparent">
-          <router-link :to="{ name: 'addProduct' }">
+          <router-link :to="{ name: 'create' }">
             <button variant="primary">Add Product</button>
           </router-link>
 
@@ -32,7 +32,7 @@
             <b-button variant="primary">Return to all products</b-button>
           </router-link>
           <div>
-            <button @click="addToCart(product.id)">Add to cart</button>
+            <button @click="addToCart(product.slug)">Add to cart</button>
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@ import * as app from "./../../app.js";
 
 export default {
   name: "ProductPage",
-  props: ["id"],
+  props: ["slug"],
 
   components: {},
 
@@ -58,8 +58,8 @@ export default {
     };
   },
   computed: {
-    products: function() {
-      return this.$store.getters.getProductById(this.id);
+    product: function() {
+      return this.$store.getters.getProductBySlug(this.slug);
     }
   },
 
@@ -68,8 +68,8 @@ export default {
       let cart = new app.Cart();
       cart.add(productId);
       //app.store.cartCount = cart.count();
-      this.$store.commit("cartCount", 1);
 
+      this.$store.commit("setCartCount", cart.count());
       this.addAlert = true;
       setTimeout(() => (this.addAlert = false), 3000);
     }

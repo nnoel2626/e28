@@ -17,10 +17,9 @@ export default {
   name: "Navbar",
   data() {
     return {
-      links: ["home", "products", "categories","addProduct", "cart"]
+      links: ["home", "products", "categories", "create", "cart"]
     };
   },
-
   computed: {
     cartCount: function() {
       return this.$store.state.cartCount;

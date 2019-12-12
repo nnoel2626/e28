@@ -1,0 +1,319 @@
+{
+    "products": {
+        "seedProduct1": {
+            "slug": "barker-center-thompson",
+            "categories": [
+                "portableMic"
+            ],
+            "building": "Barker Center",
+            "room": "Thompson",
+            "make": "Shure",
+            "model": "ULX P4",
+            "mic_type": "Lav",
+            "freq_range": "554-590 MHZ",
+            "freq_band": "J1",
+            "group": "G2",
+            "channel": "CH20",
+            "Assigned_freq": "589.725 MHZ",
+            "serial_number": "",
+            "comments": ""
+        },
+        "seedProduct2": {
+            "slug": "barker-center-thompson2",
+            "categories": [
+                "installedMic"
+            ],
+            "building": "Barker Center",
+            "room": "Thompson",
+            "make": "Shure",
+            "model": "ULX P4",
+            "mic_type": "HandHeld",
+            "freq_range": "554-590 MHZ",
+            "freq_band": "J1",
+            "group": "G2",
+            "channel": "CH19",
+            "Assigned_freq": "589.725 MHZ",
+            "serial_number": "",
+            "comments": ""
+        },
+        "seedProduct3": {
+            "slug": "barker-center-thompson3",
+            "categories": [
+                "roamingMic",
+                "installedMic"
+            ],
+            "building": "Barker Center",
+            "room": "Thompson",
+            "make": "Shure",
+            "model": "Axient Digital",
+            "mic_type": "LAV",
+            "freq_range": "470- 616 MHZ",
+            "freq_band": "G57",
+            "group": "G5",
+            "channel": "CH243",
+            "Assigned_freq": "602.350 MHZ",
+            "serial_number": "",
+            "comments": ""
+        },
+        "seedProduct4": {
+            "slug": "barker-center-thompson4",
+            "categories": [
+                "portableMic",
+                "roamingMic"
+            ],
+            "building": "Barker Center",
+            "room": "Thompson",
+            "make": "Shure",
+            "model": "Axient Digital",
+            "mic_type": "HandHeld",
+            "freq_range": "470- 616 MHZ",
+            "freq_band": "G57",
+            "group": "G5",
+            "channel": "CH245",
+            "Assigned_freq": "603.700 MHZ",
+            "serial_number": "",
+            "comments": ""
+        },
+        "seedProduct5": {
+            "slug": "barker-center-thompson5",
+            "categories": [
+                "installedMic"
+            ],
+            "building": "Barker Center",
+            "room": "Thompson",
+            "make": "Shure",
+            "model": "Axient Digital",
+            "mic_type": "HandHeld",
+            "freq_range": "470- 616 MHZ",
+            "freq_band": "G57",
+            "group": "G5",
+            "channel": "CH247",
+            "Assigned_freq": "604.850 MHz",
+            "serial_number": "",
+            "comments": ""
+        },
+        "seedProduct6": {
+            "slug": "barker-center-thompson6",
+            "categories": [
+                "portableMic"
+            ],
+            "building": "Barker Center",
+            "room": "Thompson",
+            "make": "Shure",
+            "model": "Axient Digital",
+            "mic_type": "HandHeld",
+            "freq_range": "470- 616 MHZ",
+            "freq_band": "G57",
+            "group": "G5",
+            "channel": "CH249",
+            "Assigned_freq": "605.875 MHz",
+            "serial_number": "",
+            "comments": ""
+        },
+        "seedProduct7": {
+            "slug": "biolab-1080-1",
+            "categories": [
+                "installedMic"
+            ],
+            "building": "BioLab",
+            "room": "Lecture H 1080",
+            "make": "Shure",
+            "model": "ULX P4",
+            "mic_type": "LAV",
+            "freq_range": "554.590MHZ",
+            "freq_band": "J1",
+            "group": "G2",
+            "channel": "CH16",
+            "Assigned_freq": "584.375MHZ",
+            "serial_number": "",
+            "comments": ""
+        },
+        "seedProduct8": {
+            "slug": "biolab-1080-2",
+            "categories": [
+                "installedMic"
+            ],
+            "building": "BioLab",
+            "room": "Lecture H 1080",
+            "make": "Shure",
+            "model": "ULX P4",
+            "mic_type": "HandHeld",
+            "freq_range": "554.590MHZ",
+            "freq_band": "J1",
+            "group": "G2",
+            "channel": "CH11",
+            "Assigned_freq": "578.075MHZ",
+            "serial_number": "",
+            "comments": ""
+        },
+        "seedProduct9": {
+            "slug": "boylston-hall-fong-1",
+            "categories": [
+                "roamingMic"
+            ],
+            "building": "Boylston Hall",
+            "room": "Fong Auditorium",
+            "make": "Shure",
+            "model": "ULX S4",
+            "mic_type": "Lav",
+            "freq_range": "555 - 590 MHZ",
+            "freq_band": "J1",
+            "group": "G2",
+            "channel": "Ch20",
+            "Assigned_freq": "589.725 MHz",
+            "serial_number": "0928071325-01",
+            "comments": ""
+        },
+        "seedProduct10": {
+            "slug": "boylston-hall-fong-2",
+            "categories": [
+                "installedMic"
+            ],
+            "building": "Boylston Hall",
+            "room": "Fong Auditorium",
+            "make": "Shure",
+            "model": "QLX-D",
+            "mic_type": "HandHeld",
+            "freq_range": "470 - 536 MHZ",
+            "freq_band": "G50",
+            "group": "G2",
+            "channel": "CH66",
+            "Assigned_freq": "533.450 MHZ",
+            "serial_number": "417132395395A2092111",
+            "comments": ""
+        },
+        "seedProduct11": {
+            "slug": "boylston-hall-fong-3",
+            "categories": [
+                "installedMic"
+            ],
+            "building": "Boylston Hall",
+            "room": "Fong Auditorium",
+            "make": "Shure",
+            "model": "QLX-D",
+            "mic_type": "HandHeld",
+            "freq_range": "470 - 536 MHZ",
+            "freq_band": "G50",
+            "group": "G2",
+            "channel": "CH67",
+            "Assigned_freq": "533.820 MHZ",
+            "serial_number": "417132395495A2092111",
+            "comments": ""
+        },
+        "seedProduct12": {
+            "slug": "boylston-hall-104",
+            "categories": [
+                "portableMic",
+                "roamingMic"
+            ],
+            "building": "Boylston Hall",
+            "room": "104",
+            "make": "Shure",
+            "model": "ULX-S",
+            "mic_type": "Lav",
+            "freq_range": "555 - 590 MHZ",
+            "freq_band": "G3",
+            "group": "G5",
+            "channel": "CH9",
+            "Assigned_freq": "",
+            "serial_number": "",
+            "comments": ""
+        },
+        "seedProduct13": {
+            "slug": "carpenter-center-theater-1",
+            "categories": [
+                "portableMic",
+                "roamingMic"
+            ],
+            "building": "Carpenter Center",
+            "room": "Theater",
+            "make": "Shure",
+            "model": "ULX P4",
+            "mic_type": "Lav #1",
+            "freq_range": "554 - 590 MHZ",
+            "freq_band": "J1",
+            "group": "G2",
+            "channel": "CH17",
+            "Assigned_freq": "587.500 MHz",
+            "serial_number": "",
+            "comments": ""
+        },
+        "seedProduct14": {
+            "slug": "carpenter-center-theater-2",
+            "categories": [
+                "portableMic",
+                "installedMic"
+            ],
+            "building": "Carpenter Center",
+            "room": "Theater",
+            "make": "Shure",
+            "model": "ULX P4",
+            "mic_type": "Lav # 2",
+            "freq_range": "554 - 590 MHZ",
+            "freq_band": "J1",
+            "group": "G2",
+            "channel": "CH18",
+            "Assigned_freq": "588.375 MHZ",
+            "serial_number": "",
+            "comments": ""
+        },
+        "seedProduct15": {
+            "slug": "carpenter-center-theater-3",
+            "categories": [
+                "installedMic"
+            ],
+            "building": "Carpenter Center",
+            "room": "Theater",
+            "make": "Shure",
+            "model": "ULX P4",
+            "mic_type": "HandHeld # 2",
+            "freq_range": "554 - 590 MHZ",
+            "freq_band": "J1",
+            "group": "G2",
+            "channel": "CH18",
+            "Assigned_freq": "588.375 MHz",
+            "serial_number": "",
+            "comments": ""
+        },
+        "seedProduct16": {
+            "slug": "carpenter-center-theater-4",
+            "categories": [
+                "installedMic"
+            ],
+            "building": "Carpenter Center",
+            "room": "Theater",
+            "make": "Shure",
+            "model": "ULX P4",
+            "mic_type": "HandHeld # 3",
+            "freq_range": "554 - 590 MHZ",
+            "freq_band": "J1",
+            "group": "G2",
+            "channel": "CH19",
+            "Assigned_freq": "588.800 MHz",
+            "serial_number": "",
+            "comments": ""
+        }
+
+    },
+
+    "users": {
+        "seedUser1": {
+            "id": 1,
+            "username": "John",
+            "email": "mensah33@gmail.com",
+            "password": "password1"
+        },
+        "seedUser2": {
+            "id": 2,
+            "username": "Mark",
+            "email": "mensah33@gmail.com",
+            "password": "password2"
+        },
+        "seedUser3": {
+            "id": 2,
+            "username": "Jean",
+            "email": "mensah33@gmail.com",
+            "password": "password3"
+        }
+    }
+}

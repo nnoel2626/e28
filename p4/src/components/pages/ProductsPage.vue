@@ -5,7 +5,7 @@
       <div class="mainContent">
         <show-product
           v-for="product in products"
-          :key="product.id"
+          :key="product.slug"
           :product="product"
         ></show-product>
       </div>
