@@ -11,8 +11,8 @@
 				<div class="card-content">
 					<p class="product-subtitle mb-2">Building: {{ product.building }}</p>
 					<p class="product-subtitle mb-2">Room: {{ product.room }}</p>
-					<p class="product-subtitle mb-2">Frequency: {{ product.assigned_freq }}</p>
-					<p class="product-subtitle mb-2">Frequency: {{ product.group }} and{{ product.channel }}</p>
+					<p class="product-subtitle mb-2">Frequency: {{ product.Assigned_freq }}</p>
+					<p class="product-subtitle mb-2">Group: {{ product.group }} and{{ product.channel }}</p>
 				</div>
 				<div class="card-footer bg-transparent">
 					<router-link

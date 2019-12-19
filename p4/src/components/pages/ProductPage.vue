@@ -21,8 +21,8 @@
 							product.channel
 							}}
 						</p>
-						<p class="product-subtitle mb-2">Frequency Band: {{ product.Freq_band }}</p>
-						<p class="product-subtitle mb-2">Frequency Range: {{ product.Freq_range }}</p>
+						<p class="product-subtitle mb-2">Frequency Band: {{ product.freq_band }}</p>
+						<p class="product-subtitle mb-2">Frequency Range: {{ product.freq_range }}</p>
 						<p class="product-subtitle mb-2">Serial Number: {{ product.serial_number }}</p>
 					</div>
 					<div class="card-footer bg-transparent">
