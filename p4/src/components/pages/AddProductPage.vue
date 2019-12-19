@@ -8,18 +8,16 @@
         <div class="card-body">
           <form id="addProdForm" @submit.prevent="requestAdd">
             <div class="form-group form-row">
-              <label
-                class="col-md-2 col-form-label text-md-right"
-                for="building"
-                >Building</label
+              <label class="col-md-2 col-form-label text-md-right" for="name"
+                >URl</label
               >
               <div class="col-md-8">
                 <input
-                  class="form-control"
                   type="text"
+                  class="form-control"
                   :class="{ 'form-input-error': $v.product.slug.$error }"
-                  name="building"
                   id="slug"
+                  data-test="product-slug-input"
                   v-model="$v.product.slug.$model"
                 />
                 <div v-if="$v.product.slug.$error">
@@ -45,6 +43,45 @@
                 </div>
               </div>
             </div>
+            <div class="form-group form-row">
+              <label
+                class="col-md-2 col-form-label text-md-right"
+                for="building"
+                >Building</label
+              >
+              <div class="col-md-8">
+                <input
+                  data-test="product-building-input"
+                  class="form-control"
+                  type="text"
+                  :class="{ 'form-input-error': $v.product.building.$error }"
+                  name="building"
+                  id="building"
+                  v-model="$v.product.building.$model"
+                />
+                <div v-if="$v.product.building.$error">
+                  <div
+                    class="form-feedback-error"
+                    v-if="!$v.product.buiding.required"
+                  >
+                    building is required.
+                  </div>
+                  <div
+                    class="form-feedback-error"
+                    v-else-if="!$v.product.building.minLength"
+                  >
+                    Product URL must be at least 4 characters long.
+                  </div>
+                  <div
+                    class="form-feedback-error"
+                    v-else-if="!$v.product.building.doesNotExist"
+                  >
+                    This URL is not available.
+                  </div>
+                  <small class="form-help">Min: 4</small>
+                </div>
+              </div>
+            </div>
 
             <div class="form-group form-row">
               <label class="col-md-2 col-form-label text-md-right" for="room"
@@ -52,6 +89,7 @@
               >
               <div class="col-md-8">
                 <input
+                  data-test="product-room-input"
                   type="text"
                   class="form-control"
                   id="room"
@@ -67,6 +105,7 @@
               >
               <div class="col-md-8">
                 <input
+                  data-test="product-make-input"
                   type="make"
                   class="form-control"
                   name="make"
@@ -76,12 +115,14 @@
                 />
               </div>
             </div>
+
             <div class="form-group form-row">
               <label class="col-md-2 col-form-label text-md-right" for="model"
                 >Model</label
               >
               <div class="col-md-8">
                 <input
+                  data-test="product-model-input"
                   type="model"
                   class="form-control"
                   name="model"
@@ -97,6 +138,7 @@
               >
               <div class="col-md-8">
                 <input
+                  data-test="product-mic_type-input"
                   type="mic_type"
                   class="form-control"
                   name="mic_type"
@@ -143,6 +185,7 @@
               >
               <div class="col-md-8">
                 <input
+                  data-test="product-serial_number-input"
                   type="serial_number"
                   class="form-control"
                   name="serial_number"
@@ -194,12 +237,13 @@
               >
               <div class="col-md-8">
                 <input
+                  data-test="product-assigned_freq-input"
                   type="assigned_frequency"
                   class="form-control"
                   name="assigned_frequency"
                   id="assigned_frequency"
                   placeholder="Assigned frequency"
-                  v-model="product.assigned_frequency"
+                  v-model="product.assigned_freq"
                 />
               </div>
             </div>
@@ -222,7 +266,11 @@
 
             <div class="form-group form-row mb-0">
               <div class="offset-md-2 col-md-10">
-                <button type="submit" class="btn btn-success d-block ml-auto">
+                <button
+                  data-test="add-product-button"
+                  type="submit"
+                  class="btn btn-success d-block ml-auto"
+                >
                   Add Product
                 </button>
               </div>
@@ -243,13 +291,14 @@
 
 <script>
 import * as app from "./../../app.js";
+
 import { required, minLength } from "vuelidate/lib/validators";
 
 let product = {};
 // If in dev mode, we'll pre-fill the product to make demo/testing easier
 if (process.env.NODE_ENV == "development") {
   product = {
-    slug: "carpenter-center-theater-4",
+    slug: "Carpenter-center-theater-4",
     categories: ["installedMic"],
     building: "Carpenter Center",
     room: "Theater",
@@ -300,7 +349,13 @@ export default {
           return !this.$store.getters.getProductBySlug(value);
         }
       },
-      name: {
+      building: {
+        required
+      },
+      room: {
+        required
+      },
+      model: {
         required
       }
     }
@@ -325,6 +380,8 @@ export default {
               name: "product",
               params: { slug: this.product.slug }
             });
+            this.addAlert = true;
+            setTimeout(() => (this.addAlert = false), 3000);
           });
       }
     }

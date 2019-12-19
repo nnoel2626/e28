@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-export const axios = require("axios");
+//export const axios = require("axios");
 import _ from "lodash";
 import * as app from "./../app.js";
 Vue.use(Vuex);
@@ -21,10 +21,10 @@ export default new Vuex.Store({
     },
     setProducts(state, payload) {
       state.products = payload;
+    },
+    addProduct(state, payload) {
+      _.merge(state.products, payload);
     }
-    // addProduct(state, payload) {
-    //   _.merge(state.products, payload)
-    // }
   },
   // Actions will not mutate state; instead they will commit mutations to mutate the state
   // Actions can contain arbitrary asynchronous operations

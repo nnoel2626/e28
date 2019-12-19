@@ -5,7 +5,12 @@
       <span>This month's featured wireless microphones</span>
     </div>
     <div class="container">
-      <div class="card text-left" v-for="product in products" :key="product.id">
+      <div
+        class="card text-left"
+        data-test="featured-product"
+        v-for="product in featuredProducts"
+        :key="product.id"
+      >
         <div class="card-body">
           <h5 class="card-title">{{ product.model }}</h5>
           <h6 class="card-subtitle mb-2 text-muted">{{ product.building }}</h6>
@@ -17,19 +22,19 @@
 </template>
 
 <script>
+import _ from "lodash";
 // import * as app from "./../app.js";
 export default {
   name: "ShowFeatured",
-
   props: ["category"],
 
   computed: {
     featuredProducts: function() {
-      function isMatch(product) {
-        return product.categories.includes(this);
-      }
-      return this.products.filter(isMatch, this.category);
+      return _.filter(this.products, product => {
+        return product.categories.includes(this.category);
+      });
     },
+
     products: function() {
       return this.$store.state.products;
     }

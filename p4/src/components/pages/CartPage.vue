@@ -21,7 +21,7 @@
               Remove
             </button>
             {{ item.quantity }} x
-            {{ getProductDetails(item.slug)['make'] }}
+            {{ getProductDetails(item.slug)["model"] }}
           </li>
         </ul>
       </div>
