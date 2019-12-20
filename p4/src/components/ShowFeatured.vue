@@ -1,90 +1,114 @@
 <template>
-  <div id="featured" class="container cleanList">
-    <div class="heading">
-      <h2>Featured Products</h2>
-      <span>This month's featured wireless microphones</span>
-    </div>
-    <div class="container">
-      <div
-        class="card text-left"
-        data-test="featured-product"
-        v-for="product in featuredProducts"
-        :key="product.id"
-      >
-        <div class="card-body">
-          <h5 class="card-title">{{ product.model }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{ product.building }}</h6>
-          <p class="card-text">{{ product.room }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div id="featured" class="container cleanList">
+		<div class="heading">
+			<h2>Featured Products</h2>
+			<span>This month's featured wireless microphones</span>
+		</div>
+
+		<div class="mainContent">
+			<div
+				class="card text-left"
+				data-test="featured-product"
+				v-for="product in featuredProducts"
+				:key="product.id"
+			>
+				<div class="card-body">
+					<p class="card-title">{{ product.model }}</p>
+					<p class="card-subtitle mb-2 text-muted">{{ product.building }}</p>
+					<p class="card-text">{{ product.room }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script>
 import _ from "lodash";
 // import * as app from "./../app.js";
 export default {
-  name: "ShowFeatured",
-  props: ["category"],
+	name: "ShowFeatured",
+	props: ["category"],
 
-  computed: {
-    featuredProducts: function() {
-      return _.filter(this.products, product => {
-        return product.categories.includes(this.category);
-      });
-    },
+	computed: {
+		featuredProducts: function() {
+			return _.filter(this.products, product => {
+				return product.categories.includes(this.category);
+			});
+		},
 
-    products: function() {
-      return this.$store.state.products;
-    }
-  },
-  data: function() {
-    return {};
-  }
+		products: function() {
+			return this.$store.state.products;
+		}
+	},
+	data: function() {
+		return {};
+	}
 };
 </script>
 
 <style scoped>
-/* .container {
-  margin-top: 1rem;
-  display: flex;
-  align-items: space-between;
-  justify-content: space-between;
-  flex-wrap: wrap;
-} */
-/* .mainContent {
-  display: flex;
-  align-items: space-between;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 100%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-} */
+.container {
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.heading {
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+	/* background-color: #eee563; */
+}
+.mainContent {
+	display: flex;
+	/* align-items: space-between; */
+	justify-content: space-between;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+div.card {
+	text-align: center;
+	margin: 10px 0.5%;
+	min-width: 180px;
+	max-width: 180px;
+}
 
-div > h2 {
-  margin: 0 auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
+.card-body[data-v-4d824cfb] {
+	background-color: #aadba8;
+	flex: 1 1 auto;
+	width: 100%;
 }
-span {
-  margin: 0 auto;
-  margin-top: 10px;
-  margin-bottom: 20px;
+
+p.card-title {
+	font-family: "Nunito", sans-serif;
+	margin: 0;
+	color: rgb(13, 100, 150);
+	font-size: 16px;
+	font-weight: 200;
+	text-align: center;
 }
-.card-body {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  /* //margin:1rem; */
-  flex: 1 1 auto;
-  /* padding: 1rem; */
-  width: 90%;
+
+p.card-subtitle {
+	font-family: "Nunito", sans-serif;
+	margin: 0;
+	color: rgb(13, 100, 150);
+	font-size: 12px;
+	font-weight: 200;
+	text-align: center;
+}
+
+p.card-text {
+	font-family: "Nunito", sans-serif;
+	font-size: 12px;
+	color: rgb(11, 11, 12);
+	letter-spacing: 1px;
+	text-align: center;
 }
 
 #featured {
-  background-color: lighten(#7fdbff, 10%);
-  border-radius: 5px;
-  padding: 10px;
+	background-color: lighten(#7fdbff, 10%);
+	/* border-radius: 5px;
+	padding: 10px; */
 }
 </style>

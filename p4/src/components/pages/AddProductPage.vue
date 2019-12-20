@@ -13,11 +13,11 @@
               >
               <div class="col-md-8">
                 <input
+                  data-test="product-slug-input"
                   type="text"
                   class="form-control"
                   :class="{ 'form-input-error': $v.product.slug.$error }"
                   id="slug"
-                  data-test="product-slug-input"
                   v-model="$v.product.slug.$model"
                 />
                 <div v-if="$v.product.slug.$error">
@@ -154,6 +154,7 @@
               >
               <div class="col-md-8">
                 <input
+                  data-test="product-group-input"
                   type="group"
                   class="form-control"
                   name="group"
@@ -170,6 +171,7 @@
               >
               <div class="col-md-8">
                 <input
+                  data-test="product-channel-input"
                   type="channel"
                   class="form-control"
                   name="channel"
@@ -203,6 +205,7 @@
               >
               <div class="col-md-8">
                 <input
+                  data-test="product-freq_band-input"
                   type="freq_band"
                   class="form-control"
                   name="freq_band"
@@ -220,6 +223,7 @@
               >
               <div class="col-md-8">
                 <input
+                  data-test="product-freq_range-input"
                   type="freque_range"
                   class="form-control"
                   name="freque_range"
@@ -253,6 +257,7 @@
               >
               <div class="col-md-6">
                 <textarea
+                  data-test="product-comments-input"
                   class="form-control"
                   rows="4"
                   cols="50"

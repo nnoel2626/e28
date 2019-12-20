@@ -39,20 +39,23 @@ export default {
 	flex-wrap: wrap;
 	text-align: center;
 }
-.mainContent {
-	display: flex;
-	align-items: space-between;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	width: 100%;
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
+
 .jumbotron {
+	font-family: "Nunito", sans-serif;
+	margin: 0;
+	color: rgb(13, 100, 150);
+	font-size: 16px;
+	font-weight: 200;
 	padding: 2rem 1rem;
-	margin-bottom: 1.5rem;
+	margin-bottom: 0.2rem;
 	background-color: #eee563;
 	border-radius: 0.3rem;
+}
+.mainContent {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
 }
 data-v-75d4b3a9 .heading {
 	color: white;
