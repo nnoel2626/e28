@@ -13,10 +13,12 @@
             </h4>
           </div>
           <div class="card-content">
-            <p class="product-subtitle mb-2">
+            <p data-test="product-building" class="product-subtitle mb-2">
               Building: {{ product.building }}
             </p>
-            <p class="product-subtitle mb-2">Room: {{ product.room }}</p>
+            <p data-test="product-room" class="product-subtitle mb-2">
+              Room: {{ product.room }}
+            </p>
             <p class="product-subtitle mb-2">Device Make: {{ product.make }}</p>
             <p class="product-subtitle mb-2">
               Device Type: {{ product.mic_type }}
@@ -46,15 +48,15 @@
               </button>
             </router-link>
             <router-link :to="{ name: 'products' }">
-              <button class="card-footer-text" variant="primary">
+              <button class="card-footer-text" variant="secondary">
                 Return to all products
               </button>
             </router-link>
-
             <button
+              type="submit"
               data-test="add-to-cart-button"
-              class="card-footer-text"
               @click="addToCart(product.slug)"
+              class="card-footer-text"
             >
               Add to cart
             </button>
@@ -62,7 +64,9 @@
         </div>
       </div>
       <transition name="fade">
-        <div class="alert" v-if="addAlert">Your cart has been updated!</div>
+        <div class="alert" data-test="add-to-cart-confirmation" v-if="addAlert">
+          Your cart has been updated!
+        </div>
       </transition>
     </div>
   </div>
@@ -70,7 +74,6 @@
 
 <script>
 import * as app from "./../../app.js";
-
 export default {
   name: "ProductPage",
   props: ["slug"],
@@ -92,8 +95,6 @@ export default {
     addToCart: function(productId) {
       let cart = new app.Cart();
       cart.add(productId);
-      //app.store.cartCount = cart.count();
-
       this.$store.commit("setCartCount", cart.count());
       this.addAlert = true;
       setTimeout(() => (this.addAlert = false), 3000);
@@ -137,24 +138,24 @@ div.card[data-v-440e70d3] {
   position: relative;
   text-align: center;
 }
-.card-header[data-v-440e70d3] {
+.card-header {
   margin: 0px;
   text-align: center;
   background-color: #eee563;
 }
 
 h4.card-header-title {
-  margin: 0;
-  font-weight: 200;
+  font-family: "Nunito", sans-serif;
   font-size: 24px;
   font-weight: 300;
-  color: #c64d57;
+  margin: 0 auto;
+  color: rgb(11, 11, 12);
+  letter-spacing: 1px;
+  margin: 0;
 }
-/* 
-div.card-text {
 
-} */
 div.card-content {
+  background-color: rgb(241, 241, 245);
   font-size: 1.1em;
   padding: 15px;
   flex: 1 0 auto;
@@ -195,7 +196,6 @@ button:hover {
 .card-footer-text {
   font-family: "Roboto", sans-serif;
   font-weight: 200;
-  /* color: #c64d57; */
   font-size: 24px;
 }
 

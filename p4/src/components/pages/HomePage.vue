@@ -19,7 +19,6 @@
 </template>
 
 <script>
-//import * as app from "./../../app.js";
 import ShowFeatured from "./../ShowFeatured.vue";
 export default {
   name: "HomePage",
@@ -59,7 +58,7 @@ export default {
   justify-content: center;
   width: 100%;
 }
-data-v-75d4b3a9 .heading {
+.data-v-75d4b3a9 .heading {
   color: white;
 }
 </style>

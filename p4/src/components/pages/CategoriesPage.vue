@@ -26,20 +26,13 @@ export default {
   computed: {
     products: function() {
       return this.$store.state.products;
-    }, // Load categories via a computed property; because it depends on `products`
-    // it will reactively be loaded once `products` is ready
+    },
     categories: function() {
       let categories = _.map(this.products, "categories");
       let mergedCategories = [].concat.apply([], categories);
       // Return unique, sorted categories
       return [...new Set(mergedCategories)].sort();
     }
-
-    // categories: function() {
-    //   let categories = this.products.map(product => product.categories);
-    //   let mergedCategories = [].concat.apply([], categories);
-    //   return [...new Set(mergedCategories)].sort();
-    // }
   }
 };
 </script>

@@ -19,32 +19,26 @@ export default {
   name: "ProductsPage",
   components: {
     "show-product": ShowProduct
-    //"search-products": SearchProducts
   },
   data: function() {
     return {
-      //	searchQuery: "",
+      //products: null,
     };
   },
-
   computed: {
     products: function() {
       return this.$store.state.products;
-    }
-  },
-  methods: {
-    searchRecords: function(terms) {
-      this.searchTerms = terms;
     }
   }
 };
 </script>
 <style scoped="css">
 .container {
-  display: flex;
-  align-items: space-between;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  margin: 0 auto;
+  text-align: center;
+}
+.searchBar {
+  text-align: center;
 }
 .mainContent {
   display: flex;
@@ -52,7 +46,7 @@ export default {
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 30px;
 }
 input-group {

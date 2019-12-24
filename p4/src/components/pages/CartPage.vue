@@ -3,14 +3,6 @@
     <div class="row mb-3">
       <div class="col-md-9">
         <h3>Your Rental Cart</h3>
-        <!-- <div v-if="items.length == 0">No items</div>
-        <ul v-else-if="products.length > 0" class="cleanList">
-          <li v-for="item in items" :key="item.id">
-            <button @click="removeFromCart(item.id)">Remove</button>
-            {{ item.quantity }} x {{ getProductDetails(item.id) }}       
-          </li>
-				</ul>-->
-
         <div v-if="items.length == 0">No items</div>
         <ul data-test="cart-contents" v-else-if="products" class="cleanList">
           <li v-for="item in items" :key="item.slug">
@@ -45,7 +37,6 @@ export default {
     },
     removeFromCart: function(productId) {
       this.cart.remove(productId);
-      //app.store.cartCount = this.cart.count();
       this.$store.commit("setCartCount", this.cart.count());
     }
   },

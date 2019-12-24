@@ -37,15 +37,7 @@ describe("products-page", () => {
     // Confirm the test product page loads
     cy.contains('[data-test="product-model"]', product.model);
     cy.visit("/product/" + product.slug);
-    //  cy.get('[data-test="product-details-button"]').click();
-    // cy.url().should("include", product.slug);
+    // cy.get('[data-test="product-details-button"]').click();
+    cy.url().should("include", product.slug);
   });
-
-  // it("shows the correct product images", () => {
-  //   cy.visit("/products");
-
-  //   cy.get("[data-test=product-image-" + product.slug + "]")
-  //     .should("have.attr", "src")
-  //     .should("include", product.slug);
-  // });
 });

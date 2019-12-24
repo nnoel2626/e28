@@ -18,8 +18,8 @@ describe("ShowProduct.vue", () => {
       group: "G5",
       channel: "CH249",
       Assigned_freq: "605.875 MHz",
-      serial_number: "",
-      comments: ""
+      serial_number: "12345",
+      comments: "abcdef"
     };
 
     const wrapper = shallowMount(ShowProduct, {

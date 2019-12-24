@@ -37,16 +37,11 @@
 </template>
 
 <script>
-//import * as app from "./../app.js";
 export default {
   name: "ShowProduct",
   props: ["product"],
   data() {
-    return {
-      searchTerm: ""
-      // myKey:"SearchPRoduct",
-      // myDir:"SearchPRoduct"
-    };
+    return {};
   }
 };
 </script>

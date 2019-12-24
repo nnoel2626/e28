@@ -8,9 +8,13 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     cartCount: 0,
-    products: null
+    products: null,
+    // product: {},
+    searchTerms: "",
+    filterKey: "building",
+    filterDir: "asc",
+    filteredProducts: null
   },
-
   mutations: {
     setCartCount(state, payload) {
       state.cartCount = payload;
@@ -24,27 +28,46 @@ export default new Vuex.Store({
     },
     addProduct(state, payload) {
       _.merge(state.products, payload);
+    },
+
+    // setProduct(state, product) {
+    //   state.product = product;
+    // },
+    filteredProducts(state, word) {
+      if (!word || word === "{}") {
+        state.searchTerms = null;
+        state.filteredProducts = null;
+      } else {
+        state.searchTerms = word;
+        word = word.trim().toLowerCase();
+        state.filteredProducts = state.products.filter(product => {
+          return (
+            product.slug.toLowerCase().includes(word) ||
+            product.building.toLowerCase().includes(word) ||
+            product.room.toLowerCase().includes(word)
+          );
+        });
+      }
     }
   },
-  // Actions will not mutate state; instead they will commit mutations to mutate the state
-  // Actions can contain arbitrary asynchronous operations
-  // Actions receive a context object which exposes the same set of methods/properties on the store instance
-  //     e.g. context.commit, context.state, context.getters
-  // Actions are triggered with the store.dispatch method
-  //     See App.vue for where this is dispatched ala this.$store.dispatch('setProducts');
+
   actions: {
     setProducts(context) {
       app.axios.get(app.config.api + "products.json").then(response => {
         context.commit("setProducts", response.data);
       });
+    },
+    setProduct({ commit }, product) {
+      commit("setProduct", product);
+    },
+    filteredProducts({ commit }, word) {
+      commit(" filteredProducts", word);
     }
   },
-  // Getters are used when we want to to compute derived state based on store state
-  // "computed properties for stores"
-  // A getter's result is cached based on its dependencies, and will only re-evaluate when
-  // some of its dependencies have changed.
-  // Getters will receive the state as their 1st argument
+
   getters: {
+    getSearchWord: state => state.searchWord,
+    getFilteredProduct: state => state.filteredProducts,
     // https://vuex.vuejs.org/guide/getters.html#method-style-access
     getProductBySlug(state) {
       return function(slug) {
@@ -53,6 +76,6 @@ export default new Vuex.Store({
         });
       };
     }
-  },
-  modules: {}
+  }
+  // modules: {}
 });
